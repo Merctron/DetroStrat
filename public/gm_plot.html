@@ -8,10 +8,14 @@
     <meta http-equiv="pragma" content="no-cache" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
     <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
-    <link href="skeleton.css" rel="stylesheet">
-    <link href="normalize.css" rel="stylesheet">
+    <link href="css/skeleton.css" rel="stylesheet">
+    <link href="css/normalize.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Orbitron:400,900" rel="stylesheet">
     <style>
+      * {
+        font-family: 'Orbitron', sans-serif;
+        font-size: 20px;
+      }
       body, html {
         background-color: #171717;
         height:100%;
@@ -67,6 +71,8 @@
       var danger = 'img/danger.png';
       var bomb = 'img/bomb.png'
       var enemy = 'img/enemy.png';
+      var enemy_gr = 'img/enemy_green.png';
+      var enemy_rd = 'img/enemy_red.png';
 
       var max_enemies = 20;
       var max_bombs = 20;
@@ -76,7 +82,7 @@
       var min_lng = 0;
 
       var score = 0;
-      var health = 0;
+      var health = 100;
 
 
       function httpGetAsync(theUrl, callback)
@@ -145,7 +151,10 @@
           s_lat: lat,
           s_lng: lng,
           x_spd: getRandomSpd(),
-          y_spd: getRandomSpd()
+          y_spd: getRandomSpd(),
+          abs_dist: 0,
+          gr_set: false,
+          rd_set: false
         });
       }
 
@@ -255,6 +264,20 @@
               }
               e_sprites[i].s_lat += e_sprites[i].x_spd;
               e_sprites[i].s_lng += e_sprites[i].y_spd;
+              if (e_sprites[i].abs_dist < 900) {
+                e_sprites[i].abs_dist++;
+              }
+              
+              if (e_sprites[i].abs_dist > 200 && !e_sprites[i].gr_set) {
+                e_sprites[i].s_marker.setIcon(enemy_gr);
+                e_sprites[i].gr_set = true;
+              }
+              if (e_sprites[i].abs_dist > 600 && !e_sprites[i].rd_set) {
+                e_sprites[i].s_marker.setIcon(enemy_rd);
+                e_sprites[i].rd_set = true;
+                health--;
+                $("#health").text("Health: " + health);
+              }
               e_sprites[i].s_marker.setPosition(new google.maps.LatLng(e_sprites[i].s_lat, e_sprites[i].s_lng));
             }
 
@@ -325,21 +348,15 @@
   <body>
     <div id="info">
       
-      <p></p>
 
-      <br></br>
+      <h2 class="gtitle" style="margin-top:10px;">Detrostrat</h2>
 
-      <h2 class="gtitle">The Falling</h2>
 
-      <br></br>
+      <h2 id="score" class="dp" style="font-size: 30px; margin-top:20px;">Score: 0</h2>
+      <h2 id="health" class="dp" style="font-size: 30px;">Health: 100</h2>
 
-      <h2 id="score" class="dp">Score: 0</h2>
-      <h2 id="health" class="dp">Health: 20</h2>
 
-      <br></br>
-
-      <p><button id="playbutton" href="javascript">New Game</button></p>
-      <p><button id="mutebutton" href="javascript">Mute Sound</button></p>
+      <p><button id="playbutton" href="javascript" style="margin-top:20px;">New Game</button></p>
       <p><button id="helpbutton" href="javascript">Help / About</button></p>
 
 
