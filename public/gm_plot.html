@@ -208,15 +208,19 @@
 
       var map;
       var p_sprites = [];
+      var p2_sprites = [];
+      var p3_sprites = [];
       var s_sprites = [];
       var b_sprites = [];
       var e_sprites = [];
       var d_sprites = [];
 
-      var speeds = [0.0001, 0.0002, 0.0003, 0.0004, -0.0001, -0.0002, -0.0003, -0.0004];
+      var speeds = [0.00001, 0.00002, 0.00003, 0.00004, -0.00001, -0.00002, -0.00003, -0.00004];
       var prc_keys = ["data_01", "data_02", "data_03", "data_04", "data_05", "data_06", "data_07", "data_08", "data_09", "data_10", "data_11", "data_12"];
 
       var tower = 'img/tower.png';
+      var tower2 = 'img/tower_2.png';
+      var tower3 = 'img/tower_3.png';
       var tower_s = 'img/tower_s.png';
       var danger = 'img/danger.png';
       var bomb = 'img/bomb.png'
@@ -235,7 +239,9 @@
       var health = 100;
       var tower_type = 1;
       var max_def = 7;
+      var cur_def = 0;
       var gmId = 0;
+      var b_thres = 100;
 
 
       function httpGetAsync(theUrl, callback)
@@ -280,7 +286,7 @@
       }
 
       function placeTowerMarker(latlng, lat, lng) {
-        if (p_sprites.length < max_def) {
+        if (cur_def < max_def) {
           var marker = new google.maps.Marker({
               position: latlng,
               map: map,
@@ -291,6 +297,42 @@
               s_lat: lat,
               s_lng: lng
           });
+          cur_def++;
+        }
+      }
+
+      function placeTower2Marker(latlng, lat, lng) {
+        if (cur_def < max_def) {
+          var marker = new google.maps.Marker({
+              position: latlng,
+              map: map,
+              icon: tower2
+          });
+          p2_sprites.push({
+              s_marker: marker,
+              s_lat: lat,
+              s_lng: lng
+          });
+          cur_def++;
+          b_thres += 10;
+        }
+      }
+
+      function placeTower3Marker(latlng, lat, lng) {
+        if (cur_def < max_def) {
+          var marker = new google.maps.Marker({
+              position: latlng,
+              map: map,
+              icon: tower3
+          });
+          var nw_tw_3 = {
+              s_marker: marker,
+              s_lat: lat,
+              s_lng: lng
+          };
+          p3_sprites.push(nw_tw_3);
+          cur_def++;
+          detectProx(nw_tw_3);
         }
       }
 
@@ -366,6 +408,7 @@
           clearInterval(gmId);
           score = 0;
           health = 100;
+          b_thres = 100;
           $("#health").text("Health: " + health);
           $("#score").text("Score: " + score);
 
@@ -373,6 +416,16 @@
             p_sprites[i].s_marker.setMap(null);
           }
           p_sprites = [];
+
+          for (var i = 0; i < p2_sprites.length; i++) {
+            p2_sprites[i].s_marker.setMap(null);
+          }
+          p2_sprites = [];
+
+          for (var i = 0; i < p3_sprites.length; i++) {
+            p3_sprites[i].s_marker.setMap(null);
+          }
+          p3_sprites = [];
 
           for (var i = 0; i < b_sprites.length; i++) {
             b_sprites[i].s_marker.setMap(null);
@@ -460,7 +513,7 @@
               b_sprites[i].s_lng += b_sprites[i].y_spd;
               b_sprites[i].abs_dist++;
               b_sprites[i].s_marker.setPosition(new google.maps.LatLng(b_sprites[i].s_lat, b_sprites[i].s_lng));
-              if (b_sprites[i].abs_dist > 100) {
+              if (b_sprites[i].abs_dist > b_thres) {
                 b_sprites[i].s_marker.setMap(null);
                 b_sprites.splice(i, 1);
               }
@@ -507,13 +560,25 @@
       }
 
       function detectColl(sprite_1, sprite_2) {
-        var r_x = 0.005;
-        var r_y = 0.005;
+        var r_x = 0.0005;
+        var r_y = 0.0005;
         if ((sprite_2.s_lat > sprite_1.s_lat - r_x && sprite_2.s_lat < sprite_1.s_lat + r_x*2) && 
           (sprite_2.s_lng > sprite_1.s_lng - r_y && sprite_2.s_lng < sprite_1.s_lng + r_y*2)) {
           return true;
         }
         return false;
+      }
+
+      function detectProx(sprite_t3) {
+        var r_x = 0.005;
+        var r_y = 0.005;
+        for (var i = 0; i < d_sprites.length; i++) {
+          if ((sprite_t3.s_lat > d_sprites[i].s_lat - r_x && sprite_t3.s_lat < d_sprites[i].s_lat + r_x*2) && 
+            (sprite_t3.s_lng > d_sprites[i].s_lng - r_y && sprite_t3.s_lng < d_sprites[i].s_lng + r_y*2)) {
+              d_sprites[i].s_marker.setMap(null);
+              d_sprites.splice(i, 1);
+          }
+        }
       }
 
       function initialize() {
@@ -540,13 +605,20 @@
         document.getElementsByTagName('head')[0].appendChild(script);
 
         var myListener = google.maps.event.addListener(map, 'click', function(event) {
-            if (tower_type == 1) {
-              placeSafeTowerMarker(event.latLng, event.latLng.lat(), event.latLng.lng());
+            switch(tower_type) {
+              case 1:
+                placeSafeTowerMarker(event.latLng, event.latLng.lat(), event.latLng.lng());
+                break;
+              case 2:
+                placeTowerMarker(event.latLng, event.latLng.lat(), event.latLng.lng());
+                break;
+              case 3:
+                placeTower2Marker(event.latLng, event.latLng.lat(), event.latLng.lng());
+                break;
+              case 4:
+                placeTower3Marker(event.latLng, event.latLng.lat(), event.latLng.lng());
+                break;
             }
-            else {
-              placeTowerMarker(event.latLng, event.latLng.lat(), event.latLng.lng());  
-            }
-            
         });
       }
 
