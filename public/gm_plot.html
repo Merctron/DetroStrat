@@ -16,12 +16,14 @@
         font-family: 'Orbitron', sans-serif;
         font-size: 20px;
       }
+      
       body, html {
         background-color: #171717;
         height:100%;
         overflow: hidden;
         overflow-y: hidden;
       }
+
       #info {
         float:left;
         color: white;
@@ -30,26 +32,153 @@
         text-align: center;
         display: inline;
         overflow-y: scroll;
+        z-index: 0;
+        max-width: 100%;
+        overflow-x: hidden;
       }
+
       #map {
         height: 100vh;
+        z-index: 1000;
       }
+
+      .titles {
+        position: relative;
+        margin-top: 20px;
+      }
+
+      .card {
+        position: relative;
+        width: 60%;
+        height: 120px;
+        margin: 0 auto;
+        background-color: #FFFFFF;
+        margin-bottom: 20px;
+      }
+
+      .card:hover{
+        background-color: #ffee93;
+        box-shadow: 0 0px 10px #6F6F6F;
+        cursor: pointer;
+      }
+
+      .icon_holder {
+        position: relative;
+        width: 75px;
+        height: 75px;
+        top: 50%;
+        transform: translateY(-50%);
+        margin: 0 auto;
+      }
+
+      .icon_holder img {
+        position: relative;
+        height: 100%;
+        width: 100%;
+        z-index: 3000;
+      }
+
+      .defense_holder {
+        position: relative;
+        height: 120px;
+        width: 100%;
+      }
+
+      .defense_holder .card {
+        position: relative;
+        height: 120px;
+        width: 50%;
+      }
+
+      .defense_holder .left_arrow {
+        position: absolute;
+        height: 50px;
+        width: 50px;
+        background-color: #FFFFFF;
+        float: left;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      .defense_holder .right_arrow {
+        position: absolute;
+        height: 50px;
+        width: 50px;
+        background-color: #FFFFFF;
+        right: 5px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      .defense_holder .left_arrow:hover, .defense_holder .right_arrow:hover {
+        box-shadow: 0 0px 10px #6F6F6F;
+        background-color: #ffee93;
+        cursor: pointer;
+      }
+
+
+      .defense_holder .left_arrow img, .defense_holder .right_arrow img  {
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+        margin: 0 auto;
+        height: 40px;
+        width: 40px;
+      }
+
     </style>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script>
       
       var map;
-      var latLng
+      var towers = ["tower", "tower_2", "tower_3"];
+      var towers_idx = 0;
 
       $(document).ready(function(){
-        $(".draggable").draggable({ revert: true });
 
-        $(".droppable").droppable({
-          drop: function( event, ui ) { 
-            placeMarker(latLng);
+        /* Function for switching the active states*/
+        $('.safe, .tower_1, .tower_2, .tower_3, .tower_4').on('click', function(){
+          var $this   = $(this);
+          var $active = $('.card.active');
+
+          /* If there is an active tower, disable the selection*/
+          if($active != undefined){
+            $active.removeClass('active');
           }
+
+          /* Activate the currently selected tower*/
+          $this.addClass('active');
         });
+
+        $('.left_arrow, .right_arrow').on('click', function() {
+          var $this = $(this);
+
+          /* Increment or decrement based on left or right */
+          if($this.hasClass('left_arrow')){
+            if(towers_idx == 0) {
+              towers_idx = 2;
+            } else {
+              towers_idx--;
+            }
+          } else {
+            if(towers_idx == 2) {
+              towers_idx = 0;
+            } else {
+              towers_idx++;
+            }
+
+          }
+
+          /* tower_type is part of the defense, then change the source file */
+          $(".icon_holder").eq(1).find('img').attr("src", "img/" + towers[towers_idx] + ".png");
+        
+        });
+
+        $("#playbutton").click(function() {
+          startGame();
+        });
+
       });
 
       function placeMarker(location) {
@@ -380,19 +509,6 @@
             }
             
         });
-
-        $("#t1button").click(function() {
-          tower_type = 1;
-        });
-
-        $("#t2button").click(function() {
-          tower_type = 2;
-        });
-
-        $("#playbutton").click(function() {
-          startGame();
-        });
-
       }
 
       // Loop through the results array and place a marker for each
@@ -416,10 +532,29 @@
       <p><button id="playbutton" href="javascript" style="margin-top:20px;">New Game</button></p>
       <p><button id="helpbutton" href="javascript">Help / About</button></p>
       <p><button id="mapbutton" href="javascript">Safety Map</button></p>
-
-      <p><button id="t1button" href="javascript" style="margin-top:20px;">Safe Tower</button></p>
-      <p><button id="t2button" href="javascript">Defense Tower</button></p>
-
+      
+      <span class="titles"> Safe Tower</span>
+      <div class="card safe">
+        <div class="icon_holder">
+          <img src="img/tower_s.png">
+        </div>
+      </div>
+      <span class="titles"> Defense Towers</span>
+      <div class="defense_holder">
+        <div class="card tower_1">
+          <div class="icon_holder">
+            <img src="img/tower.png">
+          </div>
+        </div>
+        <div class="left_arrow">
+            <img src="img/left_arrow.png">
+        </div>
+        <div class="right_arrow">
+            <img src="img/right_arrow.png">
+        </div>
+      </div>
+        
+        
 
     </div>
     <div id="map"></div>
