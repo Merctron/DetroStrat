@@ -68,14 +68,51 @@
       window.eqfeed_callback = function(results) {
         httpGetAsync('/cr_data', function(data) {
           var cr_data = parse_cr(JSON.parse(data));
+          var tower = 'img/tower.png';
+          var danger = 'img/danger.png';
           console.log(cr_data);
           for (var i = 0; i < cr_data.length; i++) {
             var latLng = new google.maps.LatLng(cr_data[i][2],cr_data[i][3]);
             var marker = new google.maps.Marker({
               position: latLng,
-              map: map
+              map: map,
+              icon: danger
             });
           };
+
+          var lat_val = 42.3314;
+          var lng_val = -83.2458;
+          var spd = 0.005;
+          var iter = 0;
+          var p_latLng = new google.maps.LatLng(lat_val, lng_val);
+          var p_marker = new google.maps.Marker({
+              position: p_latLng,
+              map: map,
+              icon: tower
+          });
+
+          var intId = setInterval(function() {
+            lat_val += spd;
+            lng_val += spd;
+            iter++;
+            if (iter > 100) {
+              iter = 0;
+              spd = -spd;
+            }
+            p_marker.setPosition( new google.maps.LatLng(lat_val, lng_val));
+          }, 50);
+
+          // var imageBounds = {
+          //     north: 42.3314,
+          //     south: 40.712216,
+          //     east: -82.0458,
+          //     west: -83.0458
+          // };
+
+          // historicalOverlay = new google.maps.GroundOverlay(
+          //       'https://www.lib.utexas.edu/maps/historical/newark_nj_1922.jpg',
+          //       imageBounds);
+          // historicalOverlay.setMap(map);
         });
       }
     </script>
