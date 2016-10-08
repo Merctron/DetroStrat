@@ -15,6 +15,18 @@
     <script>
 
 
+      var map;
+      var p_sprites;
+      var b_sprites;
+      var e_sprites;
+      var d_sprites;
+
+      var speeds = [0.001, 0.002, 0.003, 0.004, -0.001, -0.002, -0.003, -0.004];
+
+      var tower = 'img/tower.png';
+      var danger = 'img/danger.png';
+      var bomb = 'img/bomb.png'
+
       function httpGetAsync(theUrl, callback)
       {
           var xmlHttp = new XMLHttpRequest();
@@ -24,6 +36,17 @@
           }
           xmlHttp.open("GET", theUrl, true); // true for asynchronous 
           xmlHttp.send(null);
+      }
+
+      function getRandomNumber(min, max) {
+        var rand = min + Math.random()*(max+1-min);
+        rand = Math.floor(rand);
+        return rand;
+      };
+
+      function getRandomSpd() {
+        var rand_ind = getRandomNumber(0, 7);
+        return speeds[rand_ind];
       }
 
       function parse_cr(cr_data) {
@@ -43,9 +66,52 @@
           }
 
           return current_set_total;
-        }
+      }
 
-      var map;
+      function placeTowerMarker(latlng, lat, lng) {
+          var marker = new google.maps.Marker({
+              position: latlng,
+              map: map,
+              icon: tower
+          });
+          p_sprites.push({
+              s_marker: marker,
+              s_lat: lat,
+              s_lng: lng
+          });
+      }
+
+      function spawnEnemy(lat, lng) {
+        var latLng = new google.maps.LatLng(lat, lng);
+        var marker = new google.maps.Marker({
+              position: latLng,
+              map: map,
+              icon: danger
+        });
+        e_sprites.push({
+          s_marker: marker,
+          s_lat: lat,
+          s_lng: lng,
+          x_spd: getRandomSpd(),
+          y_spd: getRandomSpd()
+        });
+      }
+
+      function spawnBomb(lat, lng) {
+        var latLng = new google.maps.LatLng(lat, lng);
+        var marker = new google.maps.Marker({
+              position: latLng,
+              map: map,
+              icon: bomb
+        });
+        b_sprites.push({
+          s_marker: marker,
+          s_lat: lat,
+          s_lng: lng,
+          x_spd: getRandomSpd(),
+          y_spd: getRandomSpd()
+        });
+      }
 
       function initialize() {
         map = new google.maps.Map(document.getElementById('map'), {
@@ -54,12 +120,22 @@
           mapTypeId: 'terrain'
         });
 
+        p_sprites = [];
+        b_sprites = [];
+        e_sprites = [];
+        d_sprites = [];
+
         // Create a <script> tag and set the USGS URL as the source.
         var script = document.createElement('script');
         // (In this example we use a locally stored copy instead.)
         // script.src = 'http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_week.geojsonp';
         script.src = 'https://developers.google.com/maps/documentation/javascript/tutorials/js/earthquake_GeoJSONP.js';
         document.getElementsByTagName('head')[0].appendChild(script);
+
+        var myListener = google.maps.event.addListener(map, 'click', function(event) {
+            console.log(event);
+            placeTowerMarker(event.latLng, event.latLng.lat(), event.latLng.lng());
+        });
 
       }
 
@@ -68,8 +144,7 @@
       window.eqfeed_callback = function(results) {
         httpGetAsync('/cr_data', function(data) {
           var cr_data = parse_cr(JSON.parse(data));
-          var tower = 'img/tower.png';
-          var danger = 'img/danger.png';
+          
           console.log(cr_data);
           for (var i = 0; i < cr_data.length; i++) {
             var latLng = new google.maps.LatLng(cr_data[i][2],cr_data[i][3]);
@@ -78,28 +153,54 @@
               map: map,
               icon: danger
             });
+
+            d_sprites.push({
+              s_marker: marker,
+              s_lat: parseFloat(cr_data[i][2]),
+              s_lng: parseFloat(cr_data[i][3])
+            });
           };
 
-          var lat_val = 42.3314;
-          var lng_val = -83.2458;
           var spd = 0.005;
           var iter = 0;
-          var p_latLng = new google.maps.LatLng(lat_val, lng_val);
-          var p_marker = new google.maps.Marker({
-              position: p_latLng,
-              map: map,
-              icon: tower
-          });
+          iter2 = 100;
+          var spawn = true;
 
           var intId = setInterval(function() {
-            lat_val += spd;
-            lng_val += spd;
-            iter++;
-            if (iter > 100) {
-              iter = 0;
-              spd = -spd;
+            for (var i = 0; i < e_sprites.length; i++) {
+              e_sprites[i].s_lat += e_sprites[i].x_spd;
+              e_sprites[i].s_lng += e_sprites[i].y_spd;
+              e_sprites[i].s_marker.setPosition(new google.maps.LatLng(e_sprites[i].s_lat, e_sprites[i].s_lng));
             }
-            p_marker.setPosition( new google.maps.LatLng(lat_val, lng_val));
+
+            for (var i = 0; i < b_sprites.length; i++) {
+              b_sprites[i].s_lat += b_sprites[i].x_spd;
+              b_sprites[i].s_lng += b_sprites[i].y_spd;
+              b_sprites[i].s_marker.setPosition(new google.maps.LatLng(b_sprites[i].s_lat, b_sprites[i].s_lng));
+            }
+            //lat_val += spd;
+            //lng_val += spd;
+            iter++;
+            if (iter > 10 && e_sprites.length < 100) {
+              spd = -spd;
+              spawn = false;
+              for (var i = 0; i < d_sprites.length; i++) {
+                for (var j = 0; j < 5; j++) {
+                  spawnEnemy(d_sprites[i].s_lat, d_sprites[i].s_lng);
+                }
+              }
+            }
+
+            iter2++;
+            if (iter2 > 40) {
+              iter2 = 0;
+              for (var i = 0; i < p_sprites.length; i++) {
+                for (var j = 0; j < 5; j++) {
+                  spawnBomb(p_sprites[i].s_lat, p_sprites[i].s_lng);
+                }
+              }
+            }
+            //p_marker.setPosition( new google.maps.LatLng(lat_val, lng_val));
           }, 50);
 
           // var imageBounds = {
