@@ -11,9 +11,39 @@
         height: 400px;
         width: 100%;
        }
-    </style>
-    <script>
 
+      #mainbar {
+        position: relative;
+        width: 100%;
+        height: 335px;
+        background-color: #E8E8E8; 
+
+      }
+
+    </style>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+      
+      var map;
+      var latLng
+
+      $(document).ready(function(){
+        $(".draggable").draggable({ revert: true });
+
+        $(".droppable").droppable({
+          drop: function( event, ui ) { 
+            placeMarker(latLng);
+          }
+        });
+      });
+
+      function placeMarker(location) {
+        var marker = new google.maps.Marker({
+          position: location, 
+          map: map
+        });
+      }
 
       function httpGetAsync(theUrl, callback)
       {
@@ -45,13 +75,20 @@
           return current_set_total;
         }
 
-      var map;
-
       function initialize() {
         map = new google.maps.Map(document.getElementById('map'), {
           zoom: 10,
           center: new google.maps.LatLng(42.3314, -83.0458),
           mapTypeId: 'terrain'
+        });
+
+        google.maps.event.addListener(map, 'click', function(event) {
+          placeMarker(event.latLng);
+        });
+
+        google.maps.event.addListener(map, 'mouseover', function(event) {
+          var proj = map.getProjection();
+          latLng = event.latLng;
         });
 
         // Create a <script> tag and set the USGS URL as the source.
@@ -118,7 +155,22 @@
     </script>
   </head>
   <body>
-    <div id="map"></div>
+    <div id="map" class="droppable"></div>
+    <div id="mainbar">
+      <div class="towers">
+        <div class="title">
+          <span>Towers</span>
+        </div>
+        <div id="t1">
+          <img class = draggable src="img/tower.png">
+        </div>
+      </div>
+      <div class="status">
+        <span>Health</span>
+
+        <span>Money</span>
+      </div>
+    </div>
     <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnvbLIbhkDRUgb-OnC-KZFYXZILMAYjYk&callback=initialize">
     </script>
