@@ -12,14 +12,45 @@
         width: 100%;
        }
     </style>
-    <script src="http://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha256-/SIrNqv8h6QGKDuNoLGA4iret+kyesCkHGzVUUV0shc=" crossorigin="anonymous"></script>
     <script>
+
+
+      function httpGetAsync(theUrl, callback)
+      {
+          var xmlHttp = new XMLHttpRequest();
+          xmlHttp.onreadystatechange = function() { 
+              if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
+                  callback(xmlHttp.responseText);
+          }
+          xmlHttp.open("GET", theUrl, true); // true for asynchronous 
+          xmlHttp.send(null);
+      }
+
+      function parse_cr(cr_data) {
+          var current_set_total = [];
+          var current_set;
+
+          for (var i = 0; i < cr_data.data.length; i++) {
+            current_set = [];
+            /* Push onto the array in the following order: crime, zip, lat, long */
+            current_set.push(cr_data.data[i][9]);
+            current_set.push(cr_data.data[i][11])
+            current_set.push(cr_data.data[i][18][1])
+            current_set.push(cr_data.data[i][18][2]);
+
+            current_set_total.push(current_set);
+
+          }
+
+          return current_set_total;
+        }
+
       var map;
-      
+
       function initialize() {
         map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 2,
-          center: new google.maps.LatLng(2.8,-187.3),
+          zoom: 10,
+          center: new google.maps.LatLng(42.3314, -83.0458),
           mapTypeId: 'terrain'
         });
 
@@ -30,23 +61,22 @@
         script.src = 'https://developers.google.com/maps/documentation/javascript/tutorials/js/earthquake_GeoJSONP.js';
         document.getElementsByTagName('head')[0].appendChild(script);
 
-        $.getJSON( "det_open_data/data.json", function( data ) {
-          console.log(data);
-        });
       }
 
       // Loop through the results array and place a marker for each
       // set of coordinates.
       window.eqfeed_callback = function(results) {
-        for (var i = 0; i < results.features.length; i++) {
-          var coords = results.features[i].geometry.coordinates;
-          var latLng = new google.maps.LatLng(coords[1],coords[0]);
-          var marker = new google.maps.Marker({
-            position: latLng,
-            map: map
-          });
-        }
-
+        httpGetAsync('/cr_data', function(data) {
+          var cr_data = parse_cr(JSON.parse(data));
+          console.log(cr_data);
+          for (var i = 0; i < cr_data.length; i++) {
+            var latLng = new google.maps.LatLng(cr_data[i][2],cr_data[i][3]);
+            var marker = new google.maps.Marker({
+              position: latLng,
+              map: map
+            });
+          };
+        });
       }
     </script>
   </head>

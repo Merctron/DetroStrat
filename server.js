@@ -60,6 +60,7 @@ var MasterApp = function() {
         var mainRouter = express.Router();
 
         mainRouter.get('/', mainController.getLandingPage);
+        mainRouter.get('/cr_data', mainController.getCrData);
         self.app.use('/', mainRouter);
 
     };
