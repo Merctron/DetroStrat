@@ -4,6 +4,7 @@ var app = {
 		this.schema = schema;
 		this.crime_data_points = {};
 		parseCrime();
+		displayOptions();
 	},
 
 	/**
@@ -15,6 +16,14 @@ var app = {
 		var me = this;
 	},
 
+	/*
+	 * displayOptions
+	 * Will take all the crime data and display 
+	 */
+	displayOptions: function() {
+
+	}
+
 	/* 
 	* parseCrime
 	* Funtion used to parse the data from the overall crime data 
@@ -22,7 +31,9 @@ var app = {
 	parseCrime: function() {
 		var current_set;
 		var data = this.schema.data;
-
+		var zip  = "";
+		
+		/* For loop to create crime data points based on zip*/
 		for (var i = 0; i < data.length; i++) {
 			current_set = [];
 
@@ -31,9 +42,14 @@ var app = {
 			current_set.push(data[i][11])
 			current_set.push(data[i][18][1])
 			current_set.push(data[i][18][2]);
+			zip = current_set[1];
 
 			/* Push the current set of data into the overall_data */
-			crime_data_points.data.push[current_set]
+			if(this.crime_data_points[zip] == undefined){
+				this.crime_data_points[zip] = [current_set];
+			} else {
+				this.crime_data_points[zip].push[current_set]
+			}
 		}
 	}
 };
