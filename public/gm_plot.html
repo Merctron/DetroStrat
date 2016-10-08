@@ -6,7 +6,7 @@
     <meta http-equiv="expires" content="0" />
     <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
     <meta http-equiv="pragma" content="no-cache" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
     <link href="css/skeleton.css" rel="stylesheet">
     <link href="css/normalize.css" rel="stylesheet">
@@ -60,6 +60,10 @@
         background-color: #ffee93;
         box-shadow: 0 0px 10px #6F6F6F;
         cursor: pointer;
+      }
+
+      .card.active {
+        background-color: #ffee93;
       }
 
       .icon_holder {
@@ -138,13 +142,21 @@
       $(document).ready(function(){
 
         /* Function for switching the active states*/
-        $('.safe, .tower_1, .tower_2, .tower_3, .tower_4').on('click', function(){
+        $('.safe, .tower, .tower_2, .tower_3').on('click', function(){
           var $this   = $(this);
           var $active = $('.card.active');
+          console.log("Am I going here?");
 
           /* If there is an active tower, disable the selection*/
           if($active != undefined){
             $active.removeClass('active');
+          }
+
+          /* Get the tower number relating to the newly active one */
+          if($this.hasClass("safe")){
+            tower_type = 1;
+          } else {
+            tower_type = towers_idx + 2;
           }
 
           /* Activate the currently selected tower*/
@@ -153,6 +165,9 @@
 
         $('.left_arrow, .right_arrow').on('click', function() {
           var $this = $(this);
+
+          /* Remove the old tower class */
+          $this.parents(".defense_holder:first").find(".card").removeClass(towers[towers_idx]);
 
           /* Increment or decrement based on left or right */
           if($this.hasClass('left_arrow')){
@@ -169,6 +184,9 @@
             }
 
           }
+
+          /* Add the new tower class */
+          $this.parents(".defense_holder:first").find(".card").addClass(towers[towers_idx]);
 
           /* tower_type is part of the defense, then change the source file */
           $(".icon_holder").eq(1).find('img').attr("src", "img/" + towers[towers_idx] + ".png");
@@ -559,7 +577,7 @@
       </div>
       <span class="titles"> Defense Towers</span>
       <div class="defense_holder">
-        <div class="card tower_1">
+        <div class="card tower">
           <div class="icon_holder">
             <img src="img/tower.png">
           </div>
