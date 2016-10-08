@@ -157,6 +157,24 @@
               s_lat: lat,
               s_lng: lng
           });
+
+          $.post( "/sfsubmit", {
+              lat: lat,
+              lng: lng
+            }, function( data ) {
+              console.log(data);
+          }, "json");
+
+          // $.ajax({
+          //   type: "POST",
+          //   url: '/sfsubmit',
+          //   data: {
+          //     lat: lat,
+          //     lng: lng
+          //   },
+          //   success: success,
+          //   dataType: dataType
+          // });
       }
 
       function spawnEnemy(lat, lng) {
