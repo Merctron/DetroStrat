@@ -286,6 +286,24 @@
               s_lat: lat,
               s_lng: lng
           });
+
+          $.post( "/sfsubmit", {
+              lat: lat,
+              lng: lng
+            }, function( data ) {
+              console.log(data);
+          }, "json");
+
+          // $.ajax({
+          //   type: "POST",
+          //   url: '/sfsubmit',
+          //   data: {
+          //     lat: lat,
+          //     lng: lng
+          //   },
+          //   success: success,
+          //   dataType: dataType
+          // });
       }
 
       function spawnEnemy(lat, lng) {
@@ -531,7 +549,7 @@
 
       <p><button id="playbutton" href="javascript" style="margin-top:20px;">New Game</button></p>
       <p><button id="helpbutton" href="javascript">Help / About</button></p>
-      <p><button id="mapbutton" href="javascript">Safety Map</button></p>
+      <a href="/sf_plot.html" target="_blank"><button id="mapbutton">Safety Map</button></a>
       
       <span class="titles"> Safe Tower</span>
       <div class="card safe">
@@ -553,9 +571,6 @@
             <img src="img/right_arrow.png">
         </div>
       </div>
-        
-        
-
     </div>
     <div id="map"></div>
     <script async defer
