@@ -67,6 +67,7 @@
       var d_sprites = [];
 
       var speeds = [0.0001, 0.0002, 0.0003, 0.0004, -0.0001, -0.0002, -0.0003, -0.0004];
+      var prc_keys = ["data_01", "data_02", "data_03", "data_04", "data_05", "data_06", "data_07", "data_08", "data_09", "data_10", "data_11", "data_12"];
 
       var tower = 'img/tower.png';
       var tower_s = 'img/tower_s.png';
@@ -112,17 +113,17 @@
         return speeds[rand_ind];
       }
 
-      function parse_cr(cr_data) {
+      function parse_cr(cr_data, prc) {
           var current_set_total = [];
           var current_set;
 
-          for (var i = 0; i < cr_data.data.length; i++) {
+          for (var i = 0; i < cr_data[prc].dp.length; i++) {
             current_set = [];
             /* Push onto the array in the following order: crime, zip, lat, long */
-            current_set.push(cr_data.data[i][9]);
-            current_set.push(cr_data.data[i][11])
-            current_set.push(cr_data.data[i][24])
-            current_set.push(cr_data.data[i][23]);
+            //current_set.push(cr_data.data[i][9]);
+            //current_set.push(cr_data.data[i][11])
+            current_set.push(cr_data[prc].dp[i][18][1])
+            current_set.push(cr_data[prc].dp[i][18][2]);
 
             current_set_total.push(current_set);
 
@@ -247,11 +248,13 @@
           e_sprites = [];
 
           httpGetAsync('/cr_data', function(data) {
-            var cr_data = parse_cr(JSON.parse(data));
-          
+            
+            var pr_ind = parseInt($("#pr_select").val()) - 1;
+            var cr_data = parse_cr(JSON.parse(data),  prc_keys[pr_ind]);
+            map.setCenter(new google.maps.LatLng(JSON.parse(data)[prc_keys[pr_ind]].c_lat, JSON.parse(data)[prc_keys[pr_ind]].c_lng));
             console.log(cr_data);
             for (var i = 0; i < cr_data.length; i++) {
-              var latLng = new google.maps.LatLng(cr_data[i][2],cr_data[i][3]);
+              var latLng = new google.maps.LatLng(cr_data[i][0],cr_data[i][1]);
               var marker = new google.maps.Marker({
                 position: latLng,
                 map: map,
@@ -260,8 +263,8 @@
 
               d_sprites.push({
                 s_marker: marker,
-                s_lat: parseFloat(cr_data[i][2]),
-                s_lng: parseFloat(cr_data[i][3])
+                s_lat: parseFloat(cr_data[i][0]),
+                s_lng: parseFloat(cr_data[i][1])
               });
             };
 
@@ -368,7 +371,7 @@
 
       function initialize() {
         map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 12,
+          zoom: 14,
           center: new google.maps.LatLng(42.40723, -83.07037),
           mapTypeId: 'terrain'
         });
@@ -434,6 +437,20 @@
       <p><button id="playbutton" href="javascript" style="margin-top:20px;">New Game</button></p>
       <p><button id="helpbutton" href="javascript">Help / About</button></p>
       <a href="/sf_plot.html" target="_blank"><button id="mapbutton">Safety Map</button></a>
+      <select id="pr_select" style="background-color:#000; margin-top:15px;">
+        <option value="1">Precint 1</option>
+        <option value="2">Precint 2</option>
+        <option value="3">Precint 3</option>
+        <option value="4">Precint 4</option>
+        <option value="5">Precint 5</option>
+        <option value="6">Precint 6</option>
+        <option value="7">Precint 7</option>
+        <option value="8">Precint 8</option>
+        <option value="9">Precint 9</option>
+        <option value="10">Precint 10</option>
+        <option value="11">Precint 11</option>
+        <option value="12">Precint 12</option>
+      </select>
 
       <p><button id="t1button" href="javascript" style="margin-top:20px;">Safe Tower</button></p>
       <p><button id="t2button" href="javascript">Defense Tower</button></p>

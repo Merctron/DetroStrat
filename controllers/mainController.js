@@ -14,7 +14,7 @@ exports.getLandingPage = function(req, res) {
 };
 
 exports.getCrData = function(req, res) {
-  	var file = 'public/det_open_data/data.json';
+  	var file = 'public/det_open_data/pr_agg.json';
   	console.log('path: ' + file);
 
   	jsonfile.readFile(file, function(err, obj) {

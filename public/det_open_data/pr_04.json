@@ -1,0 +1,479 @@
+{
+  "meta" : {
+    "view" : {
+      "id" : "zzzz-zzzz",
+      "name" : "DPD: Reported Major Crimes, 2011-2014",
+      "attribution" : "DPD",
+      "attributionLink" : "http://detroit-data.demo.socrata.com",
+      "averageRating" : 0,
+      "category" : "Public Safety",
+      "description" : "Reported major crime offenses from Jan 1, 2011 through Dec 31, 2014 for the City of Detroit.",
+      "displayType" : "table",
+      "downloadCount" : 0,
+      "iconUrl" : "fileId:c63079c6-8e06-40a1-a5a7-d52b127fa919",
+      "indexUpdatedAt" : 1452152883,
+      "newBackend" : false,
+      "numberOfComments" : 0,
+      "oid" : 0,
+      "publicationAppendEnabled" : false,
+      "publicationStage" : "published",
+      "rowClass" : "",
+      "rowsUpdatedAt" : 1430502486,
+      "rowsUpdatedBy" : "ieid-vcvi",
+      "tableId" : 2760428,
+      "totalTimesRated" : 0,
+      "viewCount" : 0,
+      "viewType" : "tabular",
+      "columns" : [ {
+        "id" : -1,
+        "name" : "sid",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":sid",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : { }
+      }, {
+        "id" : -1,
+        "name" : "id",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":id",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : { }
+      }, {
+        "id" : -1,
+        "name" : "position",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":position",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : { }
+      }, {
+        "id" : -1,
+        "name" : "created_at",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":created_at",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : { }
+      }, {
+        "id" : -1,
+        "name" : "created_meta",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":created_meta",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : { }
+      }, {
+        "id" : -1,
+        "name" : "updated_at",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":updated_at",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : { }
+      }, {
+        "id" : -1,
+        "name" : "updated_meta",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":updated_meta",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : { }
+      }, {
+        "id" : -1,
+        "name" : "meta",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":meta",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : { }
+      }, {
+        "id" : 201686862,
+        "name" : "ROWNUM",
+        "dataTypeName" : "number",
+        "fieldName" : "rownum",
+        "position" : 2,
+        "renderTypeName" : "number",
+        "tableColumnId" : 28020336,
+        "width" : 172,
+        "format" : { }
+      }, {
+        "id" : 201686869,
+        "name" : "CATEGORY",
+        "dataTypeName" : "text",
+        "fieldName" : "category",
+        "position" : 3,
+        "renderTypeName" : "text",
+        "tableColumnId" : 28020343,
+        "width" : 196,
+        "format" : { }
+      }, {
+        "id" : 201686873,
+        "name" : "OFFENSEDESCRIPTION",
+        "dataTypeName" : "text",
+        "fieldName" : "offensedescription",
+        "position" : 4,
+        "renderTypeName" : "text",
+        "tableColumnId" : 28020347,
+        "width" : 316,
+        "format" : { }
+      }, {
+        "id" : 201686874,
+        "name" : "STATEOFFENSEFILECLASS",
+        "dataTypeName" : "number",
+        "fieldName" : "stateoffensefileclass",
+        "position" : 5,
+        "renderTypeName" : "number",
+        "tableColumnId" : 28020348,
+        "width" : 352,
+        "format" : { }
+      }, {
+        "id" : 201686875,
+        "name" : "INCIDENTDATE",
+        "dataTypeName" : "calendar_date",
+        "fieldName" : "incidentdate",
+        "position" : 6,
+        "renderTypeName" : "calendar_date",
+        "tableColumnId" : 28020349,
+        "width" : 244,
+        "format" : { }
+      }, {
+        "id" : 201686876,
+        "name" : "HOUR",
+        "dataTypeName" : "number",
+        "fieldName" : "hour",
+        "position" : 7,
+        "renderTypeName" : "number",
+        "tableColumnId" : 28020350,
+        "width" : 148,
+        "format" : { }
+      }, {
+        "id" : 201686877,
+        "name" : "SCA",
+        "dataTypeName" : "number",
+        "fieldName" : "sca",
+        "position" : 8,
+        "renderTypeName" : "number",
+        "tableColumnId" : 28020351,
+        "width" : 136,
+        "format" : { }
+      }, {
+        "id" : 201686878,
+        "name" : "PRECINCT",
+        "dataTypeName" : "number",
+        "fieldName" : "precinct",
+        "position" : 9,
+        "renderTypeName" : "number",
+        "tableColumnId" : 28020352,
+        "width" : 196,
+        "format" : { }
+      }, {
+        "id" : 201686879,
+        "name" : "NEIGHBORHOOD",
+        "dataTypeName" : "text",
+        "fieldName" : "neighborhood",
+        "position" : 10,
+        "renderTypeName" : "text",
+        "tableColumnId" : 28020353,
+        "width" : 244,
+        "format" : { }
+      }, {
+        "id" : 201686880,
+        "name" : "CENSUSTRACT",
+        "dataTypeName" : "number",
+        "fieldName" : "censustract",
+        "position" : 11,
+        "renderTypeName" : "number",
+        "tableColumnId" : 28020354,
+        "width" : 232,
+        "format" : { }
+      }, {
+        "id" : 201686881,
+        "name" : "LOCATION",
+        "dataTypeName" : "location",
+        "fieldName" : "location",
+        "position" : 12,
+        "renderTypeName" : "location",
+        "tableColumnId" : 28020355,
+        "width" : 196,
+        "format" : { },
+        "subColumnTypes" : [ "human_address", "latitude", "longitude", "machine_address", "needs_recoding" ]
+      } ],
+      "grants" : [ {
+        "inherited" : true,
+        "type" : "viewer",
+        "flags" : [ "public" ]
+      } ],
+      "metadata" : {
+        "rdfSubject" : "0",
+        "rdfClass" : "",
+        "jsonQuery" : {
+          "where" : {
+            "metadata" : {
+              "unifiedVersion" : 2
+            },
+            "children" : [ {
+              "metadata" : {
+                "tableColumnId" : {
+                  "2760428" : 28020343
+                },
+                "freeform" : true,
+                "operator" : "EQUALS"
+              },
+              "columnFieldName" : "category",
+              "value" : "AGGRAVATED ASSAULT",
+              "operator" : "EQUALS"
+            }, {
+              "metadata" : {
+                "tableColumnId" : {
+                  "2760428" : 28020352
+                },
+                "freeform" : true,
+                "operator" : "EQUALS"
+              },
+              "columnFieldName" : "precinct",
+              "value" : 4,
+              "operator" : "EQUALS"
+            }, {
+              "metadata" : {
+                "tableColumnId" : {
+                  "2760428" : 28020349
+                },
+                "freeform" : true,
+                "operator" : "GREATER_THAN"
+              },
+              "columnFieldName" : "incidentdate",
+              "value" : "2014-12-01T00:00:00",
+              "operator" : "GREATER_THAN"
+            } ],
+            "operator" : "AND"
+          }
+        },
+        "custom_fields" : {
+          "Metadata" : {
+            "Agencies" : "Detroit Police Department",
+            "Time Period" : "1/1/2011-12/31/2014",
+            "Update Frequency" : "As needed",
+            "Disclaimer" : "This PRELIMINARY INFORMATION is used on an ongoing basis by the Detroit Police Department for strategic planning and crime analysis. This data is not final and thus is not the crime data that is reported to the FBI Uniform Crime Reporting Program."
+          }
+        },
+        "rowIdentifier" : "0",
+        "rowLabel" : "Row",
+        "availableDisplayTypes" : [ "table", "fatrow", "page" ],
+        "renderTypeConfig" : {
+          "visible" : {
+            "table" : true
+          }
+        }
+      },
+      "query" : {
+        "filterCondition" : {
+          "type" : "operator",
+          "value" : "AND",
+          "children" : [ {
+            "type" : "operator",
+            "value" : "OR",
+            "children" : [ {
+              "type" : "operator",
+              "value" : "EQUALS",
+              "children" : [ {
+                "columnId" : 201686869,
+                "type" : "column"
+              }, {
+                "type" : "literal",
+                "value" : "AGGRAVATED ASSAULT"
+              } ],
+              "metadata" : {
+                "freeform" : true
+              }
+            } ],
+            "metadata" : {
+              "tableColumnId" : {
+                "2760428" : 28020343
+              },
+              "operator" : "EQUALS"
+            }
+          }, {
+            "type" : "operator",
+            "value" : "OR",
+            "children" : [ {
+              "type" : "operator",
+              "value" : "EQUALS",
+              "children" : [ {
+                "columnId" : 201686878,
+                "type" : "column"
+              }, {
+                "type" : "literal",
+                "value" : "4"
+              } ],
+              "metadata" : {
+                "freeform" : true
+              }
+            } ],
+            "metadata" : {
+              "tableColumnId" : {
+                "2760428" : 28020352
+              },
+              "operator" : "EQUALS"
+            }
+          }, {
+            "type" : "operator",
+            "value" : "OR",
+            "children" : [ {
+              "type" : "operator",
+              "value" : "GREATER_THAN",
+              "children" : [ {
+                "columnId" : 201686875,
+                "type" : "column"
+              }, {
+                "type" : "literal",
+                "value" : "2014-12-01T00:00:00"
+              } ],
+              "metadata" : {
+                "freeform" : true
+              }
+            } ],
+            "metadata" : {
+              "tableColumnId" : {
+                "2760428" : 28020349
+              },
+              "operator" : "GREATER_THAN"
+            }
+          } ],
+          "metadata" : {
+            "unifiedVersion" : 2
+          }
+        }
+      },
+      "rights" : [ "read" ],
+      "tableAuthor" : {
+        "id" : "ieid-vcvi",
+        "displayName" : "David Martin",
+        "roleName" : "editor",
+        "screenName" : "David Martin",
+        "rights" : [ "create_datasets", "view_domain", "create_pages", "view_goals", "view_dashboards", "view_story", "view_unpublished_story" ]
+      },
+      "tags" : [ "detroit police", "crime", "offenses" ],
+      "viewFilters" : {
+        "type" : "operator",
+        "value" : "AND",
+        "children" : [ {
+          "type" : "operator",
+          "value" : "OR",
+          "children" : [ {
+            "type" : "operator",
+            "value" : "EQUALS",
+            "children" : [ {
+              "columnId" : 201686869,
+              "type" : "column"
+            }, {
+              "type" : "literal",
+              "value" : "AGGRAVATED ASSAULT"
+            } ],
+            "metadata" : {
+              "freeform" : true
+            }
+          } ],
+          "metadata" : {
+            "tableColumnId" : {
+              "2760428" : 28020343
+            },
+            "operator" : "EQUALS"
+          }
+        }, {
+          "type" : "operator",
+          "value" : "OR",
+          "children" : [ {
+            "type" : "operator",
+            "value" : "EQUALS",
+            "children" : [ {
+              "columnId" : 201686878,
+              "type" : "column"
+            }, {
+              "type" : "literal",
+              "value" : "4"
+            } ],
+            "metadata" : {
+              "freeform" : true
+            }
+          } ],
+          "metadata" : {
+            "tableColumnId" : {
+              "2760428" : 28020352
+            },
+            "operator" : "EQUALS"
+          }
+        }, {
+          "type" : "operator",
+          "value" : "OR",
+          "children" : [ {
+            "type" : "operator",
+            "value" : "GREATER_THAN",
+            "children" : [ {
+              "columnId" : 201686875,
+              "type" : "column"
+            }, {
+              "type" : "literal",
+              "value" : "2014-12-01T00:00:00"
+            } ],
+            "metadata" : {
+              "freeform" : true
+            }
+          } ],
+          "metadata" : {
+            "tableColumnId" : {
+              "2760428" : 28020349
+            },
+            "operator" : "GREATER_THAN"
+          }
+        } ],
+        "metadata" : {
+          "unifiedVersion" : 2
+        }
+      },
+      "flags" : [ "unsaved" ]
+    }
+  },
+  "data" : [ [ 234687, "2DC56C32-6B63-4F0D-9A27-5C1FAA6CE173", 234687, 1430477233, "704602", 1430477233, "704602", "{\n}", "1904513", "AGGRAVATED ASSAULT", "AGG/FEL ASSAULT - NON-FAMILY - OTHER WEAPON", "13002", "2014-12-02T00:00:00", "14", "403", "4", "NEWBERRY", "5254", [ "{\"address\":\"WARREN\",\"city\":\"\",\"state\":\"\",\"zip\":\"03800\"}", "42.3368", "-83.1115", null, false ] ]
+, [ 230635, "148D7906-11BA-4373-AC73-ACEEDF47BD7D", 230635, 1430477226, "704602", 1430477226, "704602", "{\n}", "1888736", "AGGRAVATED ASSAULT", "AGG/FEL ASSAULT - NON-FAMILY - OTHER WEAPON", "13002", "2014-12-03T00:00:00", "19", "414", "4", "SOUTHWEST DETROIT / MEXICANTOWN", "5234", [ "{\"address\":\"W LAFAYETTE APT 203\",\"city\":\"\",\"state\":\"\",\"zip\":\"04000\"}", "42.316", "-83.0879", null, false ] ]
+, [ 231835, "31B6F32A-695F-4147-B301-9A31C1B3E51F", 231835, 1430477228, "704602", 1430477228, "704602", "{\n}", "1891835", "AGGRAVATED ASSAULT", "AGG/FEL ASSAULT - NON-FAMILY - GUN", "13002", "2014-12-05T00:00:00", "20", "415", "4", "BOYNTON", "5248", [ "{\"address\":\"W OUTER DRIVE\",\"city\":\"\",\"state\":\"\",\"zip\":\"26400\"}", "42.2575", "-83.1625", null, false ] ]
+, [ 230961, "F35EE728-15AE-4189-8E45-B545940C2D7F", 230961, 1430477227, "704602", 1430477227, "704602", "{\n}", "1889667", "AGGRAVATED ASSAULT", "AGG/FEL ASSAULT - NON-FAMILY - GUN", "13002", "2014-12-06T00:00:00", "11", "409", "4", "SOUTHWEST DETROIT / MEXICANTOWN", "5238", [ "{\"address\":\"MUSKET\",\"city\":\"\",\"state\":\"\",\"zip\":\"06300\"}", "42.3092", "-83.1067", null, false ] ]
+, [ 231057, "BB765DCB-0126-48F9-A969-90F24F67B72A", 231057, 1430477227, "704602", 1430477227, "704602", "{\n}", "1889875", "AGGRAVATED ASSAULT", "AGG/FEL ASSAULT - NON-FAMILY - OTHER WEAPON", "13002", "2014-12-06T00:00:00", "8", "404", "4", "CLAYTOWN", "5260", [ "{\"address\":\"00 CENTRAL ST. AND MICHIGAN AVE\",\"city\":\"\",\"state\":\"\",\"zip\":\"\"}", "42.3309", "-83.1376", null, false ] ]
+, [ 231118, "67381A30-9318-443D-B8C9-4A43319437DF", 231118, 1430477227, "704602", 1430477227, "704602", "{\n}", "1890020", "AGGRAVATED ASSAULT", "AGG/FEL ASSAULT - NON-FAMILY - OTHER WEAPON", "13002", "2014-12-06T00:00:00", "2", "408", "4", "SPRINGDALE", "5242", [ "{\"address\":\"SPRINGWELLS\",\"city\":\"\",\"state\":\"\",\"zip\":\"01800\"}", "42.3079", "-83.1249", null, false ] ]
+, [ 231540, "45925307-FC1C-43D0-AEA7-66971D8F8FFE", 231540, 1430477228, "704602", 1430477228, "704602", "{\n}", "1891071", "AGGRAVATED ASSAULT", "AGG/FEL ASSAULT - FAMILY - OTHER WEAPON", "13002", "2014-12-06T00:00:00", "2", "408", "4", "SPRINGDALE", "5242", [ "{\"address\":\"SPRINGWELLS\",\"city\":\"\",\"state\":\"\",\"zip\":\"01800\"}", "42.3078", "-83.1251", null, false ] ]
+, [ 231064, "88BEF61D-8648-4932-8EED-8AB7E7455D40", 231064, 1430477227, "704602", 1430477227, "704602", "{\n}", "1889894", "AGGRAVATED ASSAULT", "AGG/FEL ASSAULT - NON-FAMILY - OTHER WEAPON", "13002", "2014-12-07T00:00:00", "0", "405", "4", "CLAYTOWN", "5257", [ "{\"address\":\"WALDO\",\"city\":\"\",\"state\":\"ST\",\"zip\":\"06800\"}", "42.3286", "-83.127", null, false ] ]
+, [ 231498, "BEA7263D-E507-4A13-89CE-11D0B5DD473A", 231498, 1430477228, "704602", 1430477228, "704602", "{\n}", "1890969", "AGGRAVATED ASSAULT", "AGG/FEL ASSAULT - NON-FAMILY - OTHER WEAPON", "13002", "2014-12-09T00:00:00", "23", "405", "4", "CLAYTOWN", "5257", [ "{\"address\":\"PARKWOOD\",\"city\":\"\",\"state\":\"\",\"zip\":\"06800\"}", "42.329", "-83.1276", null, false ] ]
+, [ 231505, "5D4FBB12-9E5E-43DF-BAEB-03265BC3DFAF", 231505, 1430477228, "704602", 1430477228, "704602", "{\n}", "1890989", "AGGRAVATED ASSAULT", "AGG/FEL ASSAULT - NON-FAMILY - OTHER WEAPON", "13002", "2014-12-10T00:00:00", "2", "408", "4", "SPRINGDALE", "5242", [ "{\"address\":\"LANE\",\"city\":\"\",\"state\":\"\",\"zip\":\"08400\"}", "42.3055", "-83.1285", null, false ] ]
+, [ 231518, "A64973C2-8FDD-4F24-977B-BA414FEB5E2D", 231518, 1430477228, "704602", 1430477228, "704602", "{\n}", "1891015", "AGGRAVATED ASSAULT", "AGG/FEL ASSAULT - FAMILY - OTHER WEAPON", "13002", "2014-12-10T00:00:00", "7", "407", "4", "PATTON", "5241", [ "{\"address\":\"SHARON\",\"city\":\"\",\"state\":\"\",\"zip\":\"02300\"}", "42.3089", "-83.1361", null, false ] ]
+, [ 231867, "4B420613-CA22-4BA4-8471-EC97CE74543D", 231867, 1430477228, "704602", 1430477228, "704602", "{\n}", "1891931", "AGGRAVATED ASSAULT", "AGG/FEL ASSAULT - NON-FAMILY - GUN", "13002", "2014-12-10T00:00:00", "18", "409", "4", "SOUTHWEST DETROIT / MEXICANTOWN", null, [ "{\"address\":\"W FORT\",\"city\":\"\",\"state\":\"\",\"zip\":\"06100\"}", "42.3078", "-83.1011", null, false ] ]
+, [ 231771, "06075AB8-F78D-42F5-B5CF-21EA1924FE8D", 231771, 1430477228, "704602", 1430477228, "704602", "{\n}", "1891664", "AGGRAVATED ASSAULT", "AGG/FEL ASSAULT - NON-FAMILY - OTHER WEAPON", "13002", "2014-12-11T00:00:00", "20", "409", "4", "CLEMENTE", "5238", [ "{\"address\":\"00 LAFAYETTE/LEWERNZ\",\"city\":\"\",\"state\":\"\",\"zip\":\"\"}", "42.3062", "-83.1111", null, false ] ]
+, [ 231934, "A38C4931-8F30-4168-902E-C56470ED1C96", 231934, 1430477228, "704602", 1430477228, "704602", "{\n}", "1892117", "AGGRAVATED ASSAULT", "AGG/FEL ASSAULT - FAMILY - OTHER WEAPON", "13002", "2014-12-13T00:00:00", "5", "410", "4", "SOUTHWEST DETROIT / MEXICANTOWN", "5233", [ "{\"address\":\"LANSING\",\"city\":\"\",\"state\":\"\",\"zip\":\"02200\"}", "42.3217", "-83.1002", null, false ] ]
+, [ 231936, "4270559F-BDC9-47BD-A5ED-DCE53EB5BF09", 231936, 1430477228, "704602", 1430477228, "704602", "{\n}", "1892123", "AGGRAVATED ASSAULT", "AGG/FEL ASSAULT - NON-FAMILY - OTHER WEAPON", "13002", "2014-12-13T00:00:00", "5", "405", "4", "CLAYTOWN", "5258", [ "{\"address\":\"00 MICHIGAN/MARTIN\",\"city\":\"\",\"state\":\"\",\"zip\":\"\"}", "42.331", "-83.1274", null, false ] ]
+, [ 232043, "455397FA-11B7-4D44-9315-44681323F072", 232043, 1430477229, "704602", 1430477229, "704602", "{\n}", "1892381", "AGGRAVATED ASSAULT", "AGG/FEL ASSAULT - NON-FAMILY - OTHER WEAPON", "13002", "2014-12-13T00:00:00", "23", "405", "4", "CLAYTOWN", "5257", [ "{\"address\":\"JOHN\",\"city\":\"\",\"state\":\"ST\",\"zip\":\"07000\"}", "42.329", "-83.1297", null, false ] ]
+, [ 232046, "B7A68EF0-3093-4354-9FE4-781805FD0E23", 232046, 1430477229, "704602", 1430477229, "704602", "{\n}", "1892387", "AGGRAVATED ASSAULT", "AGG/FEL ASSAULT - FAMILY - OTHER WEAPON", "13002", "2014-12-14T00:00:00", "0", "401", "4", "CLAYTOWN", "5261", [ "{\"address\":\"MCGRAW\",\"city\":\"\",\"state\":\"ST\",\"zip\":\"09000\"}", "42.3304", "-83.1529", null, false ] ]
+, [ 232056, "2A454B4E-93FA-467C-86FB-D3A9C9B589B1", 232056, 1430477229, "704602", 1430477229, "704602", "{\n}", "1892419", "AGGRAVATED ASSAULT", "AGG/FEL ASSAULT - NON-FAMILY - OTHER WEAPON", "13002", "2014-12-14T00:00:00", "2", "408", "4", "SPRINGDALE", "5242", [ "{\"address\":\"W. VERNOR\",\"city\":\"\",\"state\":\"\",\"zip\":\"08400\"}", "42.3099", "-83.1305", null, false ] ]
+, [ 232179, "54DF7591-9A80-4512-8CAE-A1221D209C05", 232179, 1430477229, "704602", 1430477229, "704602", "{\n}", "1892668", "AGGRAVATED ASSAULT", "AGG/FEL ASSAULT - NON-FAMILY - OTHER WEAPON", "13002", "2014-12-14T00:00:00", "21", "413", "4", "DELRAY", null, [ "{\"address\":\"SPRINGWELLS CRT\",\"city\":\"\",\"state\":\"\",\"zip\":\"01500\"}", "42.2894", "-83.1068", null, false ] ]
+, [ 232321, "CE900D52-A8AC-42F2-91A1-BB7E943476AF", 232321, 1430477229, "704602", 1430477229, "704602", "{\n}", "1893044", "AGGRAVATED ASSAULT", "AGG/FEL ASSAULT - NON-FAMILY - GUN", "13002", "2014-12-15T00:00:00", "19", "415", "4", "BOYNTON", "5248", [ "{\"address\":\"00 GREYFRIARS &amp; GLEASON\",\"city\":\"\",\"state\":\"\",\"zip\":\"\"}", "42.2658", "-83.1664", null, false ] ]
+, [ 232330, "A91DD752-DFDD-46AC-98CE-48341CF15F64", 232330, 1430477229, "704602", 1430477229, "704602", "{\n}", "1893061", "AGGRAVATED ASSAULT", "ASSAULT W/INTENT TO MURDER", "13002", "2014-12-15T00:00:00", "19", "402", "4", "CLAYTOWN", "5264", [ "{\"address\":\"00 MCGRAW / DANIEL\",\"city\":\"\",\"state\":\"\",\"zip\":\"\"}", "42.3389", "-83.1318", null, false ] ]
+, [ 232433, "A0E299F0-C6D5-40D2-96D7-482BFA703A41", 232433, 1430477229, "704602", 1430477229, "704602", "{\n}", "1893297", "AGGRAVATED ASSAULT", "AGG/FEL ASSAULT - NON-FAMILY - GUN", "13002", "2014-12-15T00:00:00", "23", "408", "4", "WOODMERE", "99992014", [ "{\"address\":\"CABOT\",\"city\":\"\",\"state\":\"\",\"zip\":\"01900\"}", "42.3074", "-83.1318", null, false ] ]
+, [ 232479, "87251E3E-AA8C-43F3-B82E-C451272E03CC", 232479, 1430477229, "704602", 1430477229, "704602", "{\n}", "1893416", "AGGRAVATED ASSAULT", "AGG/FEL ASSAULT - NON-FAMILY - GUN", "13002", "2014-12-16T00:00:00", "18", "411", "4", "BOYNTON", "99992014", [ "{\"address\":\"S FORT\",\"city\":\"\",\"state\":\"\",\"zip\":\"01700\"}", "42.2762", "-83.1543", null, false ] ]
+, [ 232527, "49D180A2-761A-452F-A434-D774AFB8F852", 232527, 1430477229, "704602", 1430477229, "704602", "{\n}", "1893566", "AGGRAVATED ASSAULT", "AGG/FEL ASSAULT - NON-FAMILY - OTHER WEAPON", "13002", "2014-12-17T00:00:00", "7", "409", "4", "SOUTHWEST DETROIT / MEXICANTOWN", null, [ "{\"address\":\"00 CASGRAIN AND FISHER FWY SER DR\",\"city\":\"\",\"state\":\"\",\"zip\":\"\"}", "42.306", "-83.1066", null, false ] ]
+, [ 232823, "240BA30D-DAD3-494D-9EEB-057132F86131", 232823, 1430477230, "704602", 1430477230, "704602", "{\n}", "1894339", "AGGRAVATED ASSAULT", "AGG/FEL ASSAULT - NON-FAMILY - GUN", "13002", "2014-12-19T00:00:00", "7", "415", "4", "BOYNTON", "5248", [ "{\"address\":\"W OUTER\",\"city\":\"\",\"state\":\"DR\",\"zip\":\"26400\"}", "42.2576", "-83.1624", null, false ] ]
+, [ 232962, "BA9AF6FE-4869-4044-AC53-F30AC453122A", 232962, 1430477230, "704602", 1430477230, "704602", "{\n}", "1894691", "AGGRAVATED ASSAULT", "AGG/FEL ASSAULT - NON-FAMILY - OTHER WEAPON", "13002", "2014-12-20T00:00:00", "0", "410", "4", "SOUTHWEST DETROIT / MEXICANTOWN", "5233", [ "{\"address\":\"00 W.VERNOR/LANSING\",\"city\":\"\",\"state\":\"\",\"zip\":\"\"}", "42.3191", "-83.0984", null, false ] ]
+, [ 233069, "27774CE7-22A1-4555-AADF-BC5B34D5E901", 233069, 1430477230, "704602", 1430477230, "704602", "{\n}", "1894977", "AGGRAVATED ASSAULT", "AGG/FEL ASSAULT - NON-FAMILY - OTHER WEAPON", "13002", "2014-12-21T00:00:00", "1", "404", "4", "CLAYTOWN", "99992015", [ "{\"address\":\"TRENTON\",\"city\":\"\",\"state\":\"\",\"zip\":\"04900\"}", "42.3289", "-83.147", null, false ] ]
+, [ 233124, "911342DA-1822-4DFD-9F72-78B340B204B3", 233124, 1430477231, "704602", 1430477231, "704602", "{\n}", "1895097", "AGGRAVATED ASSAULT", "AGG/FEL ASSAULT - NON-FAMILY - OTHER WEAPON", "13002", "2014-12-21T00:00:00", "12", "408", "4", "SPRINGDALE", "99992015", [ "{\"address\":\"RATHBONE\",\"city\":\"\",\"state\":\"\",\"zip\":\"08200\"}", "42.303", "-83.126", null, false ] ]
+, [ 233478, "D34EB3E3-B73C-47E1-B117-CB3551DC7464", 233478, 1430477231, "704602", 1430477231, "704602", "{\n}", "1896020", "AGGRAVATED ASSAULT", "AGG/FEL ASSAULT - FAMILY - GUN", "13002", "2014-12-23T00:00:00", "22", "412", "4", "DELRAY", "99992015", [ "{\"address\":\"COTTRELL\",\"city\":\"\",\"state\":\"\",\"zip\":\"00500\"}", "42.2965", "-83.1103", null, false ] ]
+, [ 233496, "73D8B275-ADAD-4C67-929A-EC068F72A634", 233496, 1430477231, "704602", 1430477231, "704602", "{\n}", "1896054", "AGGRAVATED ASSAULT", "AGG/FEL ASSAULT - NON-FAMILY - GUN", "13002", "2014-12-24T00:00:00", "1", "409", "4", "CLEMENTE", "99992015", [ "{\"address\":\"W. FORT STREET\",\"city\":\"\",\"state\":\"\",\"zip\":\"07600\"}", "42.3016", "-83.116", null, false ] ]
+, [ 233521, "E290CAF0-1F99-4177-9A2B-441797EB567B", 233521, 1430477231, "704602", 1430477231, "704602", "{\n}", "1896111", "AGGRAVATED ASSAULT", "AGG/FEL ASSAULT - NON-FAMILY - OTHER WEAPON", "13002", "2014-12-24T00:00:00", "6", "404", "4", "CLAYTOWN", "99992015", [ "{\"address\":\"TERNES\",\"city\":\"\",\"state\":\"\",\"zip\":\"04800\"}", "42.33", "-83.1419", null, false ] ]
+, [ 233671, "489DB38A-284D-4398-A550-1D74B430744F", 233671, 1430477231, "704602", 1430477231, "704602", "{\n}", "1896513", "AGGRAVATED ASSAULT", "AGG/FEL ASSAULT - NON-FAMILY - OTHER WEAPON", "13002", "2014-12-25T00:00:00", "15", "410", "4", "SOUTHWEST DETROIT / MEXICANTOWN", "99992015", [ "{\"address\":\"MCKINSTRY\",\"city\":\"\",\"state\":\"\",\"zip\":\"01600\"}", "42.3179", "-83.0959", null, false ] ]
+, [ 233674, "9F26D5C2-C906-4D82-9AD1-392AEA4F1199", 233674, 1430477231, "704602", 1430477231, "704602", "{\n}", "1896525", "AGGRAVATED ASSAULT", "AGG/FEL ASSAULT - NON-FAMILY - OTHER WEAPON", "13002", "2014-12-25T00:00:00", "17", "407", "4", "PATTON", "99992015", [ "{\"address\":\"W VERNOR\",\"city\":\"\",\"state\":\"\",\"zip\":\"08900\"}", "42.3085", "-83.1346", null, false ] ]
+, [ 233693, "5294E3DE-629F-4EA7-929A-124D81D38DB5", 233693, 1430477231, "704602", 1430477231, "704602", "{\n}", "1896575", "AGGRAVATED ASSAULT", "SHOOTING-NON FATAL", "13002", "2014-12-25T00:00:00", "22", "415", "4", "BOYNTON", "99992015", [ "{\"address\":\"S FORT\",\"city\":\"\",\"state\":\"\",\"zip\":\"02600\"}", "42.2704", "-83.1601", null, false ] ]
+, [ 233771, "67A9CB0A-D8F4-4783-94DC-2C9E79834923", 233771, 1430477232, "704602", 1430477232, "704602", "{\n}", "1896813", "AGGRAVATED ASSAULT", "AGG/FEL ASSAULT - NON-FAMILY - GUN", "13002", "2014-12-26T00:00:00", "16", "408", "4", "WOODMERE", "99992015", [ "{\"address\":\"OLIVET\",\"city\":\"\",\"state\":\"\",\"zip\":\"09100\"}", "42.2983", "-83.1298", null, false ] ]
+, [ 233901, "FCA48F89-37BB-44AA-AD18-61F267AC1971", 233901, 1430477232, "704602", 1430477232, "704602", "{\n}", "1897131", "AGGRAVATED ASSAULT", "AGG/FEL ASSAULT - FAMILY - OTHER WEAPON", "13002", "2014-12-27T00:00:00", "16", "406", "4", "CLAYTOWN", "99992015", [ "{\"address\":\"04100 JOE ST\",\"city\":\"\",\"state\":\"\",\"zip\":\"\"}", "42.3327", "-83.1172", null, false ] ]
+, [ 233964, "9A61BF8E-DD47-41E3-A561-59A74F0310C8", 233964, 1430477232, "704602", 1430477232, "704602", "{\n}", "1897280", "AGGRAVATED ASSAULT", "AGG/FEL ASSAULT - FAMILY - SRONG ARM", "13002", "2014-12-28T00:00:00", "3", "415", "4", "BOYNTON", "99992015", [ "{\"address\":\"S BEATRICE\",\"city\":\"\",\"state\":\"\",\"zip\":\"01700\"}", "42.2741", "-83.1498", null, false ] ]
+, [ 234006, "ACD44999-B0C5-4093-8804-B1B8978277F3", 234006, 1430477232, "704602", 1430477232, "704602", "{\n}", "1897385", "AGGRAVATED ASSAULT", "AGG/FEL ASSAULT - NON-FAMILY - GUN", "13002", "2014-12-28T00:00:00", "12", "408", "4", "SPRINGDALE", "99992015", [ "{\"address\":\"00 LAWNDALE / CHAMBERLAIN\",\"city\":\"\",\"state\":\"\",\"zip\":\"\"}", "42.3016", "-83.1271", null, false ] ]
+, [ 234186, "4A84E6A8-91C9-4A2C-B23C-3405052733BD", 234186, 1430477232, "704602", 1430477232, "704602", "{\n}", "1897855", "AGGRAVATED ASSAULT", "AGG/FEL ASSAULT - NON-FAMILY - GUN", "13002", "2014-12-29T00:00:00", "19", "409", "4", "SOUTHWEST DETROIT / MEXICANTOWN", "99992015", [ "{\"address\":\"LIVERNOIS\",\"city\":\"\",\"state\":\"\",\"zip\":\"01700\"}", "42.3147", "-83.109", null, false ] ]
+, [ 234424, "773F19B9-058C-4EDB-876A-D9A60942F8A5", 234424, 1430477233, "704602", 1430477233, "704602", "{\n}", "1899106", "AGGRAVATED ASSAULT", "AGG/FEL ASSAULT - FAMILY - GUN", "13002", "2014-12-30T00:00:00", "14", "403", "4", "NEWBERRY", "5254", [ "{\"address\":\"28TH\",\"city\":\"\",\"state\":\"ST\",\"zip\":\"04600\"}", "42.3397", "-83.1114", null, false ] ]
+ ]
+}
