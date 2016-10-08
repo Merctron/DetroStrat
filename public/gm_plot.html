@@ -60,14 +60,16 @@
       }
 
       var map;
-      var p_sprites;
-      var b_sprites;
-      var e_sprites;
-      var d_sprites;
+      var p_sprites = [];
+      var s_sprites = [];
+      var b_sprites = [];
+      var e_sprites = [];
+      var d_sprites = [];
 
       var speeds = [0.0001, 0.0002, 0.0003, 0.0004, -0.0001, -0.0002, -0.0003, -0.0004];
 
       var tower = 'img/tower.png';
+      var tower_s = 'img/tower_s.png';
       var danger = 'img/danger.png';
       var bomb = 'img/bomb.png'
       var enemy = 'img/enemy.png';
@@ -83,6 +85,9 @@
 
       var score = 0;
       var health = 100;
+      var tower_type = 1;
+      var max_def = 7;
+      var gmId = 0;
 
 
       function httpGetAsync(theUrl, callback)
@@ -127,12 +132,27 @@
       }
 
       function placeTowerMarker(latlng, lat, lng) {
+        if (p_sprites.length < max_def) {
           var marker = new google.maps.Marker({
               position: latlng,
               map: map,
               icon: tower
           });
           p_sprites.push({
+              s_marker: marker,
+              s_lat: lat,
+              s_lng: lng
+          });
+        }
+      }
+
+      function placeSafeTowerMarker(latlng, lat, lng) {
+          var marker = new google.maps.Marker({
+              position: latlng,
+              map: map,
+              icon: tower_s
+          });
+          s_sprites.push({
               s_marker: marker,
               s_lat: lat,
               s_lng: lng
@@ -177,6 +197,141 @@
 
       function startGame() {
 
+          clearInterval(gmId);
+          score = 0;
+          health = 100;
+          $("#health").text("Health: " + health);
+          $("#score").text("Score: " + score);
+
+          for (var i = 0; i < p_sprites.length; i++) {
+            p_sprites[i].s_marker.setMap(null);
+          }
+          p_sprites = [];
+
+          for (var i = 0; i < b_sprites.length; i++) {
+            b_sprites[i].s_marker.setMap(null);
+          }
+          b_sprites = [];
+
+          for (var i = 0; i < s_sprites.length; i++) {
+            s_sprites[i].s_marker.setMap(null);
+          }
+          s_sprites = [];
+
+          for (var i = 0; i < d_sprites.length; i++) {
+            d_sprites[i].s_marker.setMap(null);
+          }
+          d_sprites = [];
+
+          for (var i = 0; i < e_sprites.length; i++) {
+            e_sprites[i].s_marker.setMap(null);
+          }
+          e_sprites = [];
+
+          httpGetAsync('/cr_data', function(data) {
+            var cr_data = parse_cr(JSON.parse(data));
+          
+            console.log(cr_data);
+            for (var i = 0; i < cr_data.length; i++) {
+              var latLng = new google.maps.LatLng(cr_data[i][2],cr_data[i][3]);
+              var marker = new google.maps.Marker({
+                position: latLng,
+                map: map,
+                icon: danger
+              });
+
+              d_sprites.push({
+                s_marker: marker,
+                s_lat: parseFloat(cr_data[i][2]),
+                s_lng: parseFloat(cr_data[i][3])
+              });
+            };
+
+          });
+
+          var spd = 0.005;
+          var iter = 0;
+          iter2 = 100;
+          var spawn = true;
+
+          gmId = setInterval(function() {
+            if (health <= 0) {
+              clearInterval(intId);
+            }
+
+            for (var i = 0; i < e_sprites.length; i++) {
+              if (e_sprites[i].s_lat > max_lat || e_sprites[i].s_lat < min_lat) {
+                e_sprites[i].x_spd = -e_sprites[i].x_spd;
+              }
+              if (e_sprites[i].s_lng > max_lng || e_sprites[i].s_lng < min_lng) {
+                e_sprites[i].y_spd = -e_sprites[i].y_spd;
+              }
+              e_sprites[i].s_lat += e_sprites[i].x_spd;
+              e_sprites[i].s_lng += e_sprites[i].y_spd;
+              e_sprites[i].abs_dist++;
+              
+              if (e_sprites[i].abs_dist > 200 && !e_sprites[i].gr_set) {
+                e_sprites[i].s_marker.setIcon(enemy_gr);
+                e_sprites[i].gr_set = true;
+              }
+              if (e_sprites[i].abs_dist > 600 && !e_sprites[i].rd_set) {
+                e_sprites[i].s_marker.setIcon(enemy_rd);
+                e_sprites[i].rd_set = true;
+                health--;
+                $("#health").text("Health: " + health);
+              }
+              e_sprites[i].s_marker.setPosition(new google.maps.LatLng(e_sprites[i].s_lat, e_sprites[i].s_lng));
+              if (e_sprites[i].abs_dist > 900) {
+                e_sprites[i].s_marker.setMap(null);
+                e_sprites.splice(i, 1);
+              }
+            }
+
+            for (var i = 0; i < b_sprites.length; i++) {
+              b_sprites[i].s_lat += b_sprites[i].x_spd;
+              b_sprites[i].s_lng += b_sprites[i].y_spd;
+              b_sprites[i].abs_dist++;
+              b_sprites[i].s_marker.setPosition(new google.maps.LatLng(b_sprites[i].s_lat, b_sprites[i].s_lng));
+              if (b_sprites[i].abs_dist > 100) {
+                b_sprites[i].s_marker.setMap(null);
+                b_sprites.splice(i, 1);
+              }
+            }
+
+            for (var i = 0; i < b_sprites.length; i++) {
+              for (var j = 0; j < e_sprites.length; j++) {
+                  if (detectColl(b_sprites[i], e_sprites[j])) {
+                    b_sprites[i].s_marker.setMap(null);
+                    b_sprites.splice(i, 1);
+                    e_sprites[j].s_marker.setMap(null);
+                    e_sprites.splice(j, 1);
+                    score++;
+                    $("#score").text("Score: " + score);
+                  }
+              }
+            }
+
+            //lat_val += spd;
+            //lng_val += spd;
+            iter++;
+            if (iter % 10 == 0 && e_sprites.length < max_enemies) {
+              for (var i = 0; i < 5; i++) {
+                var d_ind = getRandomNumber(0, d_sprites.length - 1);
+                spawnEnemy(d_sprites[d_ind].s_lat, d_sprites[d_ind].s_lng);
+              }
+            }
+
+            iter2++;
+            if (iter2 > 40 && b_sprites.length < max_bombs) {
+              iter2 = 0;
+              for (var i = 0; i < p_sprites.length; i++) {
+                for (var j = 0; j < 2; j++) {
+                  spawnBomb(p_sprites[i].s_lat, p_sprites[i].s_lng);
+                }
+              }
+            }
+            //p_marker.setPosition( new google.maps.LatLng(lat_val, lng_val));
+          }, 50);
       }
 
       function endGame() {
@@ -209,11 +364,6 @@
           min_lng = map.getBounds().getSouthWest().lng();
         });
 
-        p_sprites = [];
-        b_sprites = [];
-        e_sprites = [];
-        d_sprites = [];
-
         // Create a <script> tag and set the USGS URL as the source.
         var script = document.createElement('script');
         // (In this example we use a locally stored copy instead.)
@@ -222,7 +372,25 @@
         document.getElementsByTagName('head')[0].appendChild(script);
 
         var myListener = google.maps.event.addListener(map, 'click', function(event) {
-            placeTowerMarker(event.latLng, event.latLng.lat(), event.latLng.lng());
+            if (tower_type == 1) {
+              placeSafeTowerMarker(event.latLng, event.latLng.lat(), event.latLng.lng());
+            }
+            else {
+              placeTowerMarker(event.latLng, event.latLng.lat(), event.latLng.lng());  
+            }
+            
+        });
+
+        $("#t1button").click(function() {
+          tower_type = 1;
+        });
+
+        $("#t2button").click(function() {
+          tower_type = 2;
+        });
+
+        $("#playbutton").click(function() {
+          startGame();
         });
 
       }
@@ -230,118 +398,7 @@
       // Loop through the results array and place a marker for each
       // set of coordinates.
       window.eqfeed_callback = function(results) {
-        httpGetAsync('/cr_data', function(data) {
-          var cr_data = parse_cr(JSON.parse(data));
-          
-          console.log(cr_data);
-          for (var i = 0; i < cr_data.length; i++) {
-            var latLng = new google.maps.LatLng(cr_data[i][2],cr_data[i][3]);
-            var marker = new google.maps.Marker({
-              position: latLng,
-              map: map,
-              icon: danger
-            });
-
-            d_sprites.push({
-              s_marker: marker,
-              s_lat: parseFloat(cr_data[i][2]),
-              s_lng: parseFloat(cr_data[i][3])
-            });
-          };
-
-          var spd = 0.005;
-          var iter = 0;
-          iter2 = 100;
-          var spawn = true;
-
-          var intId = setInterval(function() {
-            for (var i = 0; i < e_sprites.length; i++) {
-              if (e_sprites[i].s_lat > max_lat || e_sprites[i].s_lat < min_lat) {
-                e_sprites[i].x_spd = -e_sprites[i].x_spd;
-              }
-              if (e_sprites[i].s_lng > max_lng || e_sprites[i].s_lng < min_lng) {
-                e_sprites[i].y_spd = -e_sprites[i].y_spd;
-              }
-              e_sprites[i].s_lat += e_sprites[i].x_spd;
-              e_sprites[i].s_lng += e_sprites[i].y_spd;
-              if (e_sprites[i].abs_dist < 900) {
-                e_sprites[i].abs_dist++;
-              }
-              
-              if (e_sprites[i].abs_dist > 200 && !e_sprites[i].gr_set) {
-                e_sprites[i].s_marker.setIcon(enemy_gr);
-                e_sprites[i].gr_set = true;
-              }
-              if (e_sprites[i].abs_dist > 600 && !e_sprites[i].rd_set) {
-                e_sprites[i].s_marker.setIcon(enemy_rd);
-                e_sprites[i].rd_set = true;
-                health--;
-                $("#health").text("Health: " + health);
-              }
-              e_sprites[i].s_marker.setPosition(new google.maps.LatLng(e_sprites[i].s_lat, e_sprites[i].s_lng));
-            }
-
-            for (var i = 0; i < b_sprites.length; i++) {
-              b_sprites[i].s_lat += b_sprites[i].x_spd;
-              b_sprites[i].s_lng += b_sprites[i].y_spd;
-              b_sprites[i].abs_dist++;
-              b_sprites[i].s_marker.setPosition(new google.maps.LatLng(b_sprites[i].s_lat, b_sprites[i].s_lng));
-              if (b_sprites[i].abs_dist > 100) {
-                b_sprites[i].s_marker.setMap(null);
-                b_sprites.splice(i, 1);
-              }
-            }
-
-            for (var i = 0; i < b_sprites.length; i++) {
-              for (var j = 0; j < e_sprites.length; j++) {
-                  if (detectColl(b_sprites[i], e_sprites[j])) {
-                    b_sprites[i].s_marker.setMap(null);
-                    b_sprites.splice(i, 1);
-                    e_sprites[j].s_marker.setMap(null);
-                    e_sprites.splice(j, 1);
-                    score++;
-                    $("#score").text("Score: " + score);
-                  }
-              }
-            }
-
-            //lat_val += spd;
-            //lng_val += spd;
-            iter++;
-            if (iter > 10 && e_sprites.length < max_enemies) {
-              spd = -spd;
-              spawn = false;
-              for (var i = 0; i < d_sprites.length; i++) {
-                for (var j = 0; j < 1; j++) {
-                  spawnEnemy(d_sprites[i].s_lat, d_sprites[i].s_lng);
-                }
-              }
-            }
-
-            iter2++;
-            if (iter2 > 40 && b_sprites.length < max_bombs) {
-              iter2 = 0;
-              for (var i = 0; i < p_sprites.length; i++) {
-                for (var j = 0; j < 2; j++) {
-                  spawnBomb(p_sprites[i].s_lat, p_sprites[i].s_lng);
-                }
-              }
-            }
-            //p_marker.setPosition( new google.maps.LatLng(lat_val, lng_val));
-          }, 50);
-
-          // var imageBounds = {
-          //     north: 42.3314,
-          //     south: 40.712216,
-          //     east: -82.0458,
-          //     west: -83.0458
-          // };
-
-          // historicalOverlay = new google.maps.GroundOverlay(
-          //       'https://www.lib.utexas.edu/maps/historical/newark_nj_1922.jpg',
-          //       imageBounds);
-          // historicalOverlay.setMap(map);
-        });
+        startGame();
       }
     </script>
   </head>
@@ -358,6 +415,10 @@
 
       <p><button id="playbutton" href="javascript" style="margin-top:20px;">New Game</button></p>
       <p><button id="helpbutton" href="javascript">Help / About</button></p>
+      <p><button id="mapbutton" href="javascript">Safety Map</button></p>
+
+      <p><button id="t1button" href="javascript" style="margin-top:20px;">Safe Tower</button></p>
+      <p><button id="t2button" href="javascript">Defense Tower</button></p>
 
 
     </div>
