@@ -1,0 +1,575 @@
+{
+  "meta" : {
+    "view" : {
+      "id" : "zzzz-zzzz",
+      "name" : "DPD: All Crime Incidents, 2009 - Present (Provisional)",
+      "attribution" : "Detroit Police Department",
+      "attributionLink" : "http://www.detroitmi.gov",
+      "averageRating" : 0,
+      "category" : "Public Safety",
+      "description" : "This data reflects reported criminal offenses that have occurred in the City of Detroit since January 1, 2009. Offense data was extracted from the Detroit Police Department's CrisNet/NetRMS records management system. This data set contains the most recent data available and is updated hourly. It should be noted that some incidents involve the commission of multiple offenses, such as a domestic assault where property was also vandalized.  Accordingly, the data describe all offenses associated with all reported incidents, excluding sexual assaults. In order to protect the privacy of crime victims, addresses are shown at the block level only and the geographic coordinates (longitude and latitude) have been randomly adjusted to provide accuracy only to the street block and do not identify precise crime locations.\r\n\r\nShould you have questions about this dataset, you may contact the Commanding Officer of the Detroit Police Department's Crime Intelligence Unit at 313-596-2250, or CrimeIntelligenceBureau@detroitmi.gov.\r\n\r\nDisclaimer: These data are based upon preliminary information supplied to the Police Department by the reporting parties and are subject to verification. The preliminary crime classifications may be changed at a later date based upon additional investigation. The Detroit Police Department does not guarantee (either expressed or implied) the accuracy, completeness, timeliness, or correct sequencing of the information and the information should not be used for comparison purposes over time. The Detroit Police Department will not be responsible for any error or omission, or for the use of, or the results obtained from the use of this information. All data visualizations on maps should be considered approximate and attempts to derive specific addresses are strictly prohibited. \r\n\r\nThe Detroit Police Department is not responsible for the content of any off-site pages that are referenced by or that reference this web page other than an official City of Detroit or Detroit Police Department web page. The user specifically acknowledges that the Detroit Police Department is not responsible for any defamatory, offensive, misleading, or illegal conduct of other users, links, or third parties and that the risk of injury from the foregoing rests entirely with the user. Any use of the information for commercial purposes is strictly prohibited. The unauthorized use of the words Detroit Police Department, \"Detroit Police,\" or any colorable imitation of these words or the unauthorized use of the Detroit Police Department logo is unlawful. This web page does not, in any way, authorize such use.\r\n\r\nField descriptions:\r\nROWNUM - Dataset Row number\r\nCASEID - Numeric Caseid Identifier\r\nCRIMEID - Numeric Offense Identifier\r\nCRNO - Detroit Police Incident Number (YYYYMMDD Report Number)\r\nADDRESS - Location Where Incident Occurred (block or intersection)\r\nCATEGORY - Crime Category\r\nOFFENSEDESCRIPTION - Description of Offense\r\nSTATEOFFENSECODE - Michigan State Police Offense Code\r\nINCIDENTDATE - Date of Crime Incident\r\nHOUR - Earliest Estimated Hour of Crime Occurrence\r\nSCA - Police Scout Car Area\r\nPRECINCT - Police Precinct\r\nCOUNCIL - City Council District\r\nNEIGHBORHOOD - Neighborhood Name\r\nCENSUSTRACT - 2010 US Census Tract\r\nLON - longitude WGS 1984\r\nLAT - latitude WGS 1984\r\nLOCATION - Socrata's Hybrid Location Field for Mapping",
+      "displayType" : "table",
+      "downloadCount" : 0,
+      "iconUrl" : "fileId:25487927-9089-44dc-acb1-9ec5b30f93ec",
+      "indexUpdatedAt" : 1475925410,
+      "licenseId" : "PUBLIC_DOMAIN",
+      "newBackend" : false,
+      "numberOfComments" : 0,
+      "oid" : 0,
+      "publicationAppendEnabled" : false,
+      "publicationStage" : "published",
+      "rowClass" : "",
+      "rowIdentifierColumnId" : 240573592,
+      "rowsUpdatedAt" : 1475922775,
+      "rowsUpdatedBy" : "ieid-vcvi",
+      "tableId" : 7655598,
+      "totalTimesRated" : 0,
+      "viewCount" : 0,
+      "viewType" : "tabular",
+      "columns" : [ {
+        "id" : -1,
+        "name" : "sid",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":sid",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : { }
+      }, {
+        "id" : -1,
+        "name" : "id",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":id",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : { }
+      }, {
+        "id" : -1,
+        "name" : "position",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":position",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : { }
+      }, {
+        "id" : -1,
+        "name" : "created_at",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":created_at",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : { }
+      }, {
+        "id" : -1,
+        "name" : "created_meta",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":created_meta",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : { }
+      }, {
+        "id" : -1,
+        "name" : "updated_at",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":updated_at",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : { }
+      }, {
+        "id" : -1,
+        "name" : "updated_meta",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":updated_meta",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : { }
+      }, {
+        "id" : -1,
+        "name" : "meta",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":meta",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : { }
+      }, {
+        "id" : 240573592,
+        "name" : "ROWNUM",
+        "dataTypeName" : "number",
+        "fieldName" : "rownum",
+        "position" : 1,
+        "renderTypeName" : "number",
+        "tableColumnId" : 33944182,
+        "width" : 96,
+        "format" : { }
+      }, {
+        "id" : 240573593,
+        "name" : "CASEID",
+        "dataTypeName" : "text",
+        "fieldName" : "caseid",
+        "position" : 2,
+        "renderTypeName" : "text",
+        "tableColumnId" : 33944183,
+        "width" : 93,
+        "format" : { }
+      }, {
+        "id" : 240573594,
+        "name" : "CRIMEID",
+        "dataTypeName" : "text",
+        "fieldName" : "crimeid",
+        "position" : 3,
+        "renderTypeName" : "text",
+        "tableColumnId" : 33944184,
+        "width" : 86,
+        "format" : { }
+      }, {
+        "id" : 240573595,
+        "name" : "CRNO",
+        "dataTypeName" : "text",
+        "fieldName" : "crno",
+        "position" : 4,
+        "renderTypeName" : "text",
+        "tableColumnId" : 33944185,
+        "width" : 105,
+        "format" : { }
+      }, {
+        "id" : 240573606,
+        "name" : "ADDRESS",
+        "dataTypeName" : "text",
+        "fieldName" : "address",
+        "position" : 5,
+        "renderTypeName" : "text",
+        "tableColumnId" : 33944196,
+        "width" : 184,
+        "format" : { }
+      }, {
+        "id" : 240573596,
+        "name" : "CATEGORY",
+        "dataTypeName" : "text",
+        "fieldName" : "category",
+        "position" : 6,
+        "renderTypeName" : "text",
+        "tableColumnId" : 33944186,
+        "width" : 196,
+        "format" : { }
+      }, {
+        "id" : 240573597,
+        "name" : "OFFENSEDESCRIPTION",
+        "dataTypeName" : "text",
+        "fieldName" : "offensedescription",
+        "position" : 7,
+        "renderTypeName" : "text",
+        "tableColumnId" : 33944187,
+        "width" : 316,
+        "format" : { }
+      }, {
+        "id" : 240573598,
+        "name" : "STATEOFFENSEFILECLASS",
+        "dataTypeName" : "text",
+        "fieldName" : "stateoffensefileclass",
+        "position" : 8,
+        "renderTypeName" : "text",
+        "tableColumnId" : 33944188,
+        "width" : 70,
+        "format" : { }
+      }, {
+        "id" : 240573599,
+        "name" : "INCIDENTDATE",
+        "dataTypeName" : "calendar_date",
+        "fieldName" : "incidentdate",
+        "position" : 9,
+        "renderTypeName" : "calendar_date",
+        "tableColumnId" : 33944189,
+        "width" : 111,
+        "format" : {
+          "view" : "date",
+          "align" : "left"
+        }
+      }, {
+        "id" : 240573600,
+        "name" : "HOUR",
+        "dataTypeName" : "number",
+        "fieldName" : "hour",
+        "position" : 10,
+        "renderTypeName" : "number",
+        "tableColumnId" : 33944190,
+        "width" : 50,
+        "format" : { }
+      }, {
+        "id" : 240573601,
+        "name" : "SCA",
+        "dataTypeName" : "text",
+        "fieldName" : "sca",
+        "position" : 11,
+        "renderTypeName" : "text",
+        "tableColumnId" : 33944191,
+        "width" : 50,
+        "format" : { }
+      }, {
+        "id" : 240573602,
+        "name" : "PRECINCT",
+        "dataTypeName" : "text",
+        "fieldName" : "precinct",
+        "position" : 12,
+        "renderTypeName" : "text",
+        "tableColumnId" : 33944192,
+        "width" : 55,
+        "format" : { }
+      }, {
+        "id" : 240573603,
+        "name" : "COUNCIL",
+        "dataTypeName" : "text",
+        "fieldName" : "council",
+        "position" : 13,
+        "renderTypeName" : "text",
+        "tableColumnId" : 33944193,
+        "width" : 184,
+        "format" : { }
+      }, {
+        "id" : 240573604,
+        "name" : "NEIGHBORHOOD",
+        "dataTypeName" : "text",
+        "fieldName" : "neighborhood",
+        "position" : 14,
+        "renderTypeName" : "text",
+        "tableColumnId" : 33944194,
+        "width" : 201,
+        "format" : { }
+      }, {
+        "id" : 240573605,
+        "name" : "CENSUSTRACT",
+        "dataTypeName" : "text",
+        "fieldName" : "censustract",
+        "position" : 15,
+        "renderTypeName" : "text",
+        "tableColumnId" : 33944195,
+        "width" : 107,
+        "format" : { }
+      }, {
+        "id" : 240573607,
+        "name" : "LON",
+        "dataTypeName" : "number",
+        "fieldName" : "lon",
+        "position" : 16,
+        "renderTypeName" : "number",
+        "tableColumnId" : 33944197,
+        "width" : 97,
+        "format" : { }
+      }, {
+        "id" : 240573608,
+        "name" : "LAT",
+        "dataTypeName" : "number",
+        "fieldName" : "lat",
+        "position" : 17,
+        "renderTypeName" : "number",
+        "tableColumnId" : 33944198,
+        "width" : 90,
+        "format" : { }
+      }, {
+        "id" : 240573609,
+        "name" : "LOCATION",
+        "dataTypeName" : "location",
+        "fieldName" : "location",
+        "position" : 18,
+        "renderTypeName" : "location",
+        "tableColumnId" : 33944199,
+        "width" : 196,
+        "format" : { },
+        "subColumnTypes" : [ "human_address", "latitude", "longitude", "machine_address", "needs_recoding" ]
+      } ],
+      "grants" : [ {
+        "inherited" : true,
+        "type" : "viewer",
+        "flags" : [ "public" ]
+      } ],
+      "license" : {
+        "name" : "Public Domain"
+      },
+      "metadata" : {
+        "jsonQuery" : {
+          "where" : {
+            "metadata" : {
+              "unifiedVersion" : 2
+            },
+            "children" : [ {
+              "metadata" : {
+                "tableColumnId" : {
+                  "7282214" : 33944192
+                },
+                "freeform" : true,
+                "operator" : "EQUALS"
+              },
+              "columnFieldName" : "precinct",
+              "value" : "99",
+              "operator" : "EQUALS"
+            }, {
+              "metadata" : {
+                "tableColumnId" : {
+                  "7282214" : 33944189
+                },
+                "freeform" : true,
+                "operator" : "GREATER_THAN"
+              },
+              "columnFieldName" : "incidentdate",
+              "value" : "2016-04-01T00:00:00",
+              "operator" : "GREATER_THAN"
+            }, {
+              "metadata" : {
+                "tableColumnId" : {
+                  "7282214" : 33944186
+                },
+                "freeform" : true,
+                "operator" : "EQUALS"
+              },
+              "columnFieldName" : "category",
+              "value" : "ASSAULT",
+              "operator" : "EQUALS"
+            } ],
+            "operator" : "AND"
+          },
+          "order" : [ {
+            "columnFieldName" : "incidentdate",
+            "ascending" : false
+          } ]
+        },
+        "rdfSubject" : "0",
+        "rdfClass" : "",
+        "custom_fields" : {
+          "Metadata" : {
+            "Agencies" : "Detroit Police Department",
+            "Time Period" : "January 1, 2009 - Present",
+            "Update Frequency" : "Daily",
+            "Disclaimer" : "Crime data consists of generic types of crimes and approximate location, and does not identify alleged perpetrators. Some records may not appear due to the mapping/geocoding process. In addition to the General Open Data Portal Disclaimer, please note that these crimes may be based upon preliminary information supplied to the Police Department and is rough data. The preliminary crime classifications may be changed at a later date based upon additional investigation and there is always the possibility of error. Therefore, the Detroit Police Department does not guarantee (either expressed or implied) the accuracy, completeness, timeliness, or correct sequencing of the information and the information should not be used for comparison purposes over time. All data visualizations on maps should be considered approximate and attempts to derive specific addresses are strictly prohibited. The Detroit Police Department is not responsible for the data of any off-site pages that are referenced by or that reference this web page other than an official City of Detroit or Detroit Police Department web page. The user specifically acknowledges that the Detroit Police Department is not responsible for any defamatory, offensive, misleading, or illegal conduct of other users, links, or third parties and that the risk of injury from the foregoing rests entirely with the user. The unauthorized use of the words \"Detroit Police Department,\" \"Detroit Police,\" or any colorable imitation of these words or the unauthorized use of the Detroit Police Department logo is unlawful. This data portal does not, in any way, authorize such use"
+          }
+        },
+        "rowIdentifier" : "240573592",
+        "rowLabel" : "Reported Crime Incident",
+        "availableDisplayTypes" : [ "table", "fatrow", "page" ],
+        "renderTypeConfig" : {
+          "visible" : {
+            "table" : true
+          }
+        }
+      },
+      "query" : {
+        "filterCondition" : {
+          "type" : "operator",
+          "value" : "AND",
+          "children" : [ {
+            "type" : "operator",
+            "value" : "OR",
+            "children" : [ {
+              "type" : "operator",
+              "value" : "EQUALS",
+              "children" : [ {
+                "columnId" : 240573602,
+                "type" : "column"
+              }, {
+                "type" : "literal",
+                "value" : "99"
+              } ],
+              "metadata" : {
+                "freeform" : true
+              }
+            } ],
+            "metadata" : {
+              "tableColumnId" : {
+                "7282214" : 33944192
+              },
+              "operator" : "EQUALS"
+            }
+          }, {
+            "type" : "operator",
+            "value" : "OR",
+            "children" : [ {
+              "type" : "operator",
+              "value" : "GREATER_THAN",
+              "children" : [ {
+                "columnId" : 240573599,
+                "type" : "column"
+              }, {
+                "type" : "literal",
+                "value" : "2016-04-01T00:00:00"
+              } ],
+              "metadata" : {
+                "freeform" : true
+              }
+            } ],
+            "metadata" : {
+              "tableColumnId" : {
+                "7282214" : 33944189
+              },
+              "operator" : "GREATER_THAN"
+            }
+          }, {
+            "type" : "operator",
+            "value" : "OR",
+            "children" : [ {
+              "type" : "operator",
+              "value" : "EQUALS",
+              "children" : [ {
+                "columnId" : 240573596,
+                "type" : "column"
+              }, {
+                "type" : "literal",
+                "value" : "ASSAULT"
+              } ],
+              "metadata" : {
+                "freeform" : true
+              }
+            } ],
+            "metadata" : {
+              "tableColumnId" : {
+                "7282214" : 33944186
+              },
+              "operator" : "EQUALS"
+            }
+          } ],
+          "metadata" : {
+            "unifiedVersion" : 2
+          }
+        },
+        "orderBys" : [ {
+          "ascending" : false,
+          "expression" : {
+            "columnId" : 240573599,
+            "type" : "column"
+          }
+        } ]
+      },
+      "rights" : [ "read" ],
+      "sortBys" : [ {
+        "id" : 0,
+        "viewColumnId" : 240573599
+      } ],
+      "tableAuthor" : {
+        "id" : "ieid-vcvi",
+        "displayName" : "David Martin",
+        "roleName" : "editor",
+        "screenName" : "David Martin",
+        "rights" : [ "create_datasets", "view_domain", "create_pages", "view_goals", "view_dashboards", "view_story", "view_unpublished_story" ]
+      },
+      "tags" : [ "police", "dpd", "crime", "crime feed", "police report" ],
+      "viewFilters" : {
+        "type" : "operator",
+        "value" : "AND",
+        "children" : [ {
+          "type" : "operator",
+          "value" : "OR",
+          "children" : [ {
+            "type" : "operator",
+            "value" : "EQUALS",
+            "children" : [ {
+              "columnId" : 240573602,
+              "type" : "column"
+            }, {
+              "type" : "literal",
+              "value" : "99"
+            } ],
+            "metadata" : {
+              "freeform" : true
+            }
+          } ],
+          "metadata" : {
+            "tableColumnId" : {
+              "7282214" : 33944192
+            },
+            "operator" : "EQUALS"
+          }
+        }, {
+          "type" : "operator",
+          "value" : "OR",
+          "children" : [ {
+            "type" : "operator",
+            "value" : "GREATER_THAN",
+            "children" : [ {
+              "columnId" : 240573599,
+              "type" : "column"
+            }, {
+              "type" : "literal",
+              "value" : "2016-04-01T00:00:00"
+            } ],
+            "metadata" : {
+              "freeform" : true
+            }
+          } ],
+          "metadata" : {
+            "tableColumnId" : {
+              "7282214" : 33944189
+            },
+            "operator" : "GREATER_THAN"
+          }
+        }, {
+          "type" : "operator",
+          "value" : "OR",
+          "children" : [ {
+            "type" : "operator",
+            "value" : "EQUALS",
+            "children" : [ {
+              "columnId" : 240573596,
+              "type" : "column"
+            }, {
+              "type" : "literal",
+              "value" : "ASSAULT"
+            } ],
+            "metadata" : {
+              "freeform" : true
+            }
+          } ],
+          "metadata" : {
+            "tableColumnId" : {
+              "7282214" : 33944186
+            },
+            "operator" : "EQUALS"
+          }
+        } ],
+        "metadata" : {
+          "unifiedVersion" : 2
+        }
+      },
+      "flags" : [ "unsaved" ]
+    }
+  },
+  "data" : [ [ 1207111, "3B48628F-1AE6-4EF6-AF0B-B9190713CBE4", 1207111, 1466589516, "704602", 1466589516, "704602", null, "1118818", "2083022", "2566572", "1605020241.1", "00 MACK DEVONSHIRE", "ASSAULT", "TELEPHONE USED FOR HARASSMENT, THREATS", "13003", "2016-04-02T00:00:00", "13", "9999", "99", null, null, "5503", "-82.9346", "42.3902", [ "{\"address\":\"00 MACK DEVONSHIRE\",\"city\":\"\",\"state\":\"\",\"zip\":\"\"}", "42.3902", "-82.9346", null, false ] ]
+, [ 1207706, "5842CF23-D653-4146-8EA5-AC76B83ACC67", 1207706, 1466589517, "704602", 1466589517, "704602", null, "1119413", "2071844", "2552114", "1604049804.1", "00100 MACK", "ASSAULT", "ASSAULT AND BATTERY/SIMPLE ASSAULT", "13001", "2016-04-04T00:00:00", "8", "9999", "99", "City Council District 6", "MEDICAL CENTER", "5175", "-83.0568", "42.3479", [ "{\"address\":\"00100 MACK\",\"city\":\"\",\"state\":\"\",\"zip\":\"\"}", "42.3479", "-83.0568", null, false ] ]
+, [ 1207904, "CC65AA99-5591-49C9-B771-0C5B7B2E2A89", 1207904, 1466589517, "704602", 1466589517, "704602", null, "1119611", "2072150", "2552513", "1604040370.1", "00 ARTESIAN FORD RD", "ASSAULT", "ASSAULT AND BATTERY/SIMPLE ASSAULT", "13001", "2016-04-04T00:00:00", "19", "9999", "99", "City Council District 7", null, "5799", "-83.2253", "42.3287", [ "{\"address\":\"00 ARTESIAN FORD RD\",\"city\":\"\",\"state\":\"\",\"zip\":\"\"}", "42.3287", "-83.2253", null, false ] ]
+, [ 1208636, "B4831F2E-2FE5-4BAA-AFF9-597764E8ED0A", 1208636, 1466589518, "704602", 1466589518, "704602", null, "1120343", "2074583", "2555619", "1604118001.1", "01600 AVONDALE", "ASSAULT", "INTIMIDATION", "13003", "2016-04-06T00:00:00", "16", "9999", "99", null, null, "5501", "-82.9328", "42.367", [ "{\"address\":\"01600 AVONDALE\",\"city\":\"\",\"state\":\"\",\"zip\":\"\"}", "42.367", "-82.9328", null, false ] ]
+, [ 1209346, "2B5B1DAB-A4BB-45AB-A6D0-20DE6C7425C9", 1209346, 1466589519, "704602", 1466589519, "704602", null, "1121053", "2073669", "2554523", "1604080229.1", "00 EDMUND   WOODWARD  PARKING LOT ", "ASSAULT", "ASSAULT AND BATTERY/SIMPLE ASSAULT", "13001", "2016-04-08T00:00:00", "15", "9999", "99", "City Council District 6", "BRUSH PARK", "5173", "-83.0554", "42.3436", [ "{\"address\":\"00 EDMUND WOODWARD PARKING LOT\",\"city\":\"\",\"state\":\"\",\"zip\":\"\"}", "42.3436", "-83.0554", null, false ] ]
+, [ 1210542, "1D909AB0-BA05-4565-BA1A-B3EE2B250B82", 1210542, 1466589521, "704602", 1466589521, "704602", null, "1122249", "2074861", "2555986", "1604110327.1", "00 WADE CONNER", "ASSAULT", "ASSAULT AND BATTERY/SIMPLE ASSAULT", "13001", "2016-04-11T00:00:00", "18", "9999", "99", "City Council District 4", "CITY AIRPORT", "5055", "-82.9914", "42.3993", [ "{\"address\":\"00 WADE CONNER\",\"city\":\"\",\"state\":\"\",\"zip\":\"\"}", "42.3993", "-82.9914", null, false ] ]
+, [ 1213221, "9E63E1DE-7803-494F-9939-3FA1DF978870", 1213221, 1466589525, "704602", 1466589525, "704602", null, "1124928", "2077708", "2559648", "1604180394.1", "00000 MILE GRATIOT  BUS STOP BY CVS ", "ASSAULT", "ASSAULT AND BATTERY/SIMPLE ASSAULT", "13001", "2016-04-18T00:00:00", "16", "9999", "99", null, null, "2589", "-82.968", "42.4499", [ "{\"address\":\"00000 MILE GRATIOT BUS STOP BY CVS\",\"city\":\"\",\"state\":\"\",\"zip\":\"\"}", "42.4499", "-82.968", null, false ] ]
+, [ 1217542, "6690BED9-30CF-43E7-926B-8E0B791C7B38", 1217542, 1466589532, "704602", 1466589532, "704602", null, "1129249", "2082106", "2565439", "1604290385.1", "00 VAN DYKE AND 8 MILE", "ASSAULT", "ASSAULT AND BATTERY/SIMPLE ASSAULT", "13001", "2016-04-29T00:00:00", "22", "9999", "99", "City Council District 3", null, "2640", "-83.0247", "42.4482", [ "{\"address\":\"00 VAN DYKE AND 8 MILE\",\"city\":\"\",\"state\":\"\",\"zip\":\"\"}", "42.4482", "-83.0247", null, false ] ]
+, [ 1217546, "CF6C6070-1DBA-44B4-B673-E68C316AAA70", 1217546, 1466589532, "704602", 1466589532, "704602", null, "1129253", "2082287", "2565662", "1604300168.1", "00000 MILE AND VAN DYKE", "ASSAULT", "ASSAULT AND BATTERY/SIMPLE ASSAULT", "13001", "2016-04-29T00:00:00", "22", "9999", "99", "City Council District 3", null, "2640", "-83.0246", "42.4479", [ "{\"address\":\"00000 MILE AND VAN DYKE\",\"city\":\"\",\"state\":\"\",\"zip\":\"\"}", "42.4479", "-83.0246", null, false ] ]
+, [ 1217632, "A6410824-F429-4608-85F6-7C00A7199AF8", 1217632, 1466589532, "704602", 1466589532, "704602", null, "1129339", "2082162", "2565516", "1604300044.1", "00 E DAVISON S CHRYSLER", "ASSAULT", "ASSAULT AND BATTERY/SIMPLE ASSAULT", "13001", "2016-04-30T00:00:00", "3", "9999", "99", null, "HIGHLAND PARK", "5536", "-83.0865", "42.4059", [ "{\"address\":\"00 E DAVISON S CHRYSLER\",\"city\":\"\",\"state\":\"\",\"zip\":\"\"}", "42.4059", "-83.0865", null, false ] ]
+, [ 1218536, "F64B9988-64DE-4B31-97FC-F4C642EF7F57", 1218536, 1466589534, "704602", 1466589534, "704602", null, "1130243", "2083096", "2566687", "1605020311.1", "00 CONNER WADE", "ASSAULT", "INTIMIDATION", "13003", "2016-05-02T00:00:00", "16", "9999", "99", "City Council District 4", "CITY AIRPORT", "5055", "-82.9912", "42.3991", [ "{\"address\":\"00 CONNER WADE\",\"city\":\"\",\"state\":\"\",\"zip\":\"\"}", "42.3991", "-82.9912", null, false ] ]
+, [ 1220470, "8368BD90-126F-48FB-9B4C-122A5FE2BD84", 1220470, 1466589537, "704602", 1466589537, "704602", null, "1132177", "2085055", "2569235", "1605070253.1", "00 VAN DYKE E 8 MILE", "ASSAULT", "ASSAULT AND BATTERY/SIMPLE ASSAULT", "13001", "2016-05-07T00:00:00", "15", "9999", "99", "City Council District 3", null, "2640", "-83.0249", "42.4479", [ "{\"address\":\"00 VAN DYKE E 8 MILE\",\"city\":\"\",\"state\":\"\",\"zip\":\"\"}", "42.4479", "-83.0249", null, false ] ]
+, [ 1222965, "2B154353-50F2-4FFA-86A8-4FE8D3526770", 1222965, 1466589541, "704602", 1466589541, "704602", null, "1134672", "2087643", "2572503", "1605140054.1", "12200 EAST EIGHT MILE", "ASSAULT", "ASSAULT AND BATTERY/SIMPLE ASSAULT", "13001", "2016-05-14T00:00:00", "1", "9999", "99", null, null, "2683", "-83.0011", "42.449", [ "{\"address\":\"12200 EAST EIGHT MILE\",\"city\":\"\",\"state\":\"\",\"zip\":\"\"}", "42.449", "-83.0011", null, false ] ]
+, [ 1223060, "4437EB92-6A5D-4C8D-AB42-7B967CC3E46E", 1223060, 1466589541, "704602", 1466589541, "704602", null, "1134767", "2090374", "2576035", "1605200323.1", "20600 KINGSVILLE STREET", "ASSAULT", "ASSAULT AND BATTERY/SIMPLE ASSAULT", "13001", "2016-05-14T00:00:00", "10", "9999", "99", null, null, "5516", "-82.929", "42.4268", [ "{\"address\":\"20600 KINGSVILLE STREET\",\"city\":\"\",\"state\":\"\",\"zip\":\"\"}", "42.4268", "-82.929", null, false ] ]
+, [ 1227604, "72E2FC6B-0DD4-4A53-A5BF-AD07080D04D3", 1227604, 1466589548, "704602", 1466589548, "704602", null, "1139311", "2092438", "2578762", "1605260025.1", "06800 DIX AVE", "ASSAULT", "ASSAULT AND BATTERY/SIMPLE ASSAULT", "13001", "2016-05-25T00:00:00", "23", "9999", "99", null, null, "5735", "-83.1434", "42.3066", [ "{\"address\":\"06800 DIX AVE\",\"city\":\"\",\"state\":\"\",\"zip\":\"\"}", "42.3066", "-83.1434", null, false ] ]
+, [ 1228209, "1EAD9159-2C23-47D5-BA7F-D81B1A538D51", 1228209, 1466589549, "704602", 1466589549, "704602", null, "1139916", "2093054", "2579576", "1605270205.1", "00000 MILE AND VAN DYKE", "ASSAULT", "TELEPHONE USED FOR HARASSMENT, THREATS", "13003", "2016-05-27T00:00:00", "14", "9999", "99", "City Council District 3", null, "2640", "-83.0247", "42.4482", [ "{\"address\":\"00000 MILE AND VAN DYKE\",\"city\":\"\",\"state\":\"\",\"zip\":\"\"}", "42.4482", "-83.0247", null, false ] ]
+, [ 1324433, "85183414-BC66-4E67-A11A-DF93489BBBA6", 1324433, 1475508024, "704602", 1475922759, "704602", null, "1165508", "2118749", "2612771", "1608010423.1", "03400 WOODWARD", "ASSAULT", "ASSAULT AND BATTERY/SIMPLE ASSAULT", "13001", "2016-08-01T00:00:00", "20", "9999", "99", "City Council District 6", "BRUSH PARK", "5173", "-83.0567", "42.3458", [ "{\"address\":\"03400 WOODWARD\",\"city\":\"\",\"state\":\"\",\"zip\":\"\"}", "42.3458", "-83.0567", null, false ] ]
+, [ 1331606, "12CFE89E-C026-4750-90EA-ADE23EFF1BBD", 1331606, 1475508030, "704602", 1475922763, "704602", null, "1172681", "2126143", "2622402", "1608200259.1", "00 MLK AND 2ND ST", "ASSAULT", "ASSAULT AND BATTERY/SIMPLE ASSAULT", "13001", "2016-08-20T00:00:00", "19", "9999", "99", "City Council District 6", "MASONIC TEMPLE / CASS PARK", "5225", "-83.0628", "42.3448", [ "{\"address\":\"00 MLK AND 2ND ST\",\"city\":\"\",\"state\":\"\",\"zip\":\"\"}", "42.3448", "-83.0628", null, false ] ]
+, [ 1313000, "523CCF8A-113B-4078-B1DE-2B0C81293CA6", 1313000, 1475508016, "704602", 1475922750, "704602", null, "1154075", "2107244", "2597924", "1607030283.1", "00 TIREMAN AND WYOMING", "ASSAULT", "ASSAULT AND BATTERY/SIMPLE ASSAULT", "13001", "2016-07-03T00:00:00", "17", "9999", "99", null, null, "5736", "-83.1575", "42.3515", [ "{\"address\":\"00 TIREMAN AND WYOMING\",\"city\":\"\",\"state\":\"\",\"zip\":\"\"}", "42.3515", "-83.1575", null, false ] ]
+, [ 1338743, "BCB6695E-5F51-4250-87F9-588A0EA5E1CF", 1338743, 1475508036, "704602", 1475922768, "704602", null, "1179818", "2133575", "2632134", "1609080298.1", "14900 TIREMAN", "ASSAULT", "TELEPHONE USED FOR HARASSMENT, THREATS", "13003", "2016-09-08T00:00:00", "16", "9999", "99", null, null, "5355", "-83.1906", "42.351", [ "{\"address\":\"14900 TIREMAN\",\"city\":\"\",\"state\":\"\",\"zip\":\"\"}", "42.351", "-83.1906", null, false ] ]
+, [ 1343306, "FB50C17C-FB6F-49EC-8A9A-35F5F0907FB1", 1343306, 1475508039, "704602", 1475922771, "704602", null, "1184381", "2138391", "2638422", "1609210024.1", "00 CAMBELL AND MELVIN", "ASSAULT", "ASSAULT AND BATTERY/SIMPLE ASSAULT", "13001", "2016-09-21T00:00:00", "1", "9999", "99", "City Council District 6", null, "5793", "-83.1458", "42.2722", [ "{\"address\":\"00 CAMBELL AND MELVIN\",\"city\":\"\",\"state\":\"\",\"zip\":\"\"}", "42.2722", "-83.1458", null, false ] ]
+, [ 1344377, "69505EF5-3DCA-481B-AB87-B2A2DF25B907", 1344377, 1475508040, "704602", 1475922772, "704602", null, "1185452", "2139612", "2640056", "1609240095.1", "00000 MILE   DRESDEN", "ASSAULT", "ASSAULT AND BATTERY/SIMPLE ASSAULT", "13001", "2016-09-24T00:00:00", "3", "9999", "99", null, null, "2683", "-83.0002", "42.4487", [ "{\"address\":\"00000 MILE DRESDEN\",\"city\":\"\",\"state\":\"\",\"zip\":\"\"}", "42.4487", "-83.0002", null, false ] ]
+, [ 1342161, "63C8B81A-D33B-41FF-9FC3-6FC2148710ED", 1342161, 1475508038, "704602", 1475922771, "704602", null, "1183236", "2137236", "2636881", "1609170251.1", "00 PETERBORO WOODWARD AVE", "ASSAULT", "ASSAULT AND BATTERY/SIMPLE ASSAULT", "13001", "2016-09-17T00:00:00", "16", "9999", "99", "City Council District 6", "BRUSH PARK", "5173", "-83.0566", "42.3455", [ "{\"address\":\"00 PETERBORO WOODWARD AVE\",\"city\":\"\",\"state\":\"\",\"zip\":\"\"}", "42.3455", "-83.0566", null, false ] ]
+, [ 1326710, "502302F3-00C2-4A1A-B220-A831ADEFF6AE", 1326710, 1475508026, "704602", 1475922760, "704602", null, "1167785", "2121012", "2615753", "1608070258.1", "16800 E  8 MILE", "ASSAULT", "ASSAULT AND BATTERY/SIMPLE ASSAULT", "13001", "2016-08-07T00:00:00", "20", "9999", "99", null, null, "2588", "-82.9454", "42.4501", [ "{\"address\":\"16800 E 8 MILE\",\"city\":\"\",\"state\":\"\",\"zip\":\"\"}", "42.4501", "-82.9454", null, false ] ]
+, [ 1333319, "3BF97CE8-BF8D-47E5-BCF9-6B7C6684069B", 1333319, 1475508032, "704602", 1475922765, "704602", null, "1174394", "2127840", "2624614", "1608250055.1", "00 BUCKINGHAM MACK", "ASSAULT", "ASSAULT AND BATTERY/SIMPLE ASSAULT", "13001", "2016-08-25T00:00:00", "5", "9999", "99", null, null, "5502", "-82.9365", "42.3896", [ "{\"address\":\"00 BUCKINGHAM MACK\",\"city\":\"\",\"state\":\"\",\"zip\":\"\"}", "42.3896", "-82.9365", null, false ] ]
+, [ 1316066, "81C60CAC-07BC-4F41-83E0-2AE264529722", 1316066, 1475508018, "704602", 1475922753, "704602", null, "1157141", "2110307", "2601841", "1607110324.1", "07400 GREENFIELD", "ASSAULT", "INTIMIDATION", "13003", "2016-07-11T00:00:00", "16", "9999", "99", "City Council District 7", null, "5738", "-83.1964", "42.3474", [ "{\"address\":\"07400 GREENFIELD\",\"city\":\"\",\"state\":\"\",\"zip\":\"\"}", "42.3474", "-83.1964", null, false ] ]
+, [ 1318095, "8B9D3F3F-54CF-47A6-8C12-63DB338FD72B", 1318095, 1475508019, "704602", 1475922754, "704602", null, "1159170", "2112314", "2604467", "1607160336.1", "00 MICHIGAN WYOMING", "ASSAULT", "ASSAULT AND BATTERY/SIMPLE ASSAULT", "13001", "2016-07-16T00:00:00", "23", "9999", "99", null, null, "5735", "-83.1564", "42.3279", [ "{\"address\":\"00 MICHIGAN WYOMING\",\"city\":\"\",\"state\":\"\",\"zip\":\"\"}", "42.3279", "-83.1564", null, false ] ]
+, [ 1333659, "3FD01CF6-5A07-445C-8181-A7D6ABA6F323", 1333659, 1475508032, "704602", 1475922765, "704602", null, "1174734", "2128221", "2625125", "1608260039.1", "00 MICHIGAN AND WYOMING", "ASSAULT", "ASSAULT AND BATTERY/SIMPLE ASSAULT", "13001", "2016-08-26T00:00:00", "2", "9999", "99", null, null, "5735", "-83.1567", "42.3278", [ "{\"address\":\"00 MICHIGAN AND WYOMING\",\"city\":\"\",\"state\":\"\",\"zip\":\"\"}", "42.3278", "-83.1567", null, false ] ]
+, [ 1338761, "8E0ADA5C-320D-4011-8965-A9119F8E03C4", 1338761, 1475508036, "704602", 1475922768, "704602", null, "1179836", "2133618", "2632188", "1609080341.1", "00 W WARREN   STOUT", "ASSAULT", "ASSAULT AND BATTERY/SIMPLE ASSAULT", "13001", "2016-09-08T00:00:00", "17", "9999", "99", null, null, "5715", "-83.239", "42.343", [ "{\"address\":\"00 W WARREN STOUT\",\"city\":\"\",\"state\":\"\",\"zip\":\"\"}", "42.343", "-83.239", null, false ] ]
+, [ 1324614, "5835D406-1377-4CCD-9382-2B96B1DAB464", 1324614, 1475508024, "704602", 1475922759, "704602", null, "1165689", "2119433", "2613690", "1608030220.1", "14900 TIREMAN", "ASSAULT", "INTIMIDATION", "13003", "2016-08-02T00:00:00", "10", "9999", "99", null, null, "5355", "-83.1905", "42.3508", [ "{\"address\":\"14900 TIREMAN\",\"city\":\"\",\"state\":\"\",\"zip\":\"\"}", "42.3508", "-83.1905", null, false ] ]
+, [ 1329831, "7787AD6C-634E-484F-92C0-AD7FF425B0A2", 1329831, 1475508029, "704602", 1475922762, "704602", null, "1170906", "2124239", "2619947", "1608160030.1", "14900 TIREMAN", "ASSAULT", "ASSAULT AND BATTERY/SIMPLE ASSAULT", "13001", "2016-08-16T00:00:00", "3", "9999", "99", null, null, "5355", "-83.1907", "42.3509", [ "{\"address\":\"14900 TIREMAN\",\"city\":\"\",\"state\":\"\",\"zip\":\"\"}", "42.3509", "-83.1907", null, false ] ]
+, [ 1329649, "165D19F2-8E51-4158-93C0-E397C54F500A", 1329649, 1475508029, "704602", 1475922762, "704602", null, "1170724", "2126059", "2622290", "1608200177.1", "00000 MILE  GRATIOT", "ASSAULT", "ASSAULT AND BATTERY/SIMPLE ASSAULT", "13001", "2016-08-15T00:00:00", "16", "9999", "99", null, null, "2589", "-82.9677", "42.4498", [ "{\"address\":\"00000 MILE GRATIOT\",\"city\":\"\",\"state\":\"\",\"zip\":\"\"}", "42.4498", "-82.9677", null, false ] ]
+, [ 1308975, "56A67447-4BD6-469F-9F83-A71EA8F56E2D", 1308975, 1475508013, "704602", 1475922747, "704602", null, "1150050", "2103175", "2592799", "1606230184.1", "00 E 8 MILE  DRESDEN  GLORY S SUPERMARKET ", "ASSAULT", "INTIMIDATION", "13003", "2016-06-23T00:00:00", "13", "9999", "99", null, null, "2683", "-83.0002", "42.4487", [ "{\"address\":\"00 E 8 MILE DRESDEN GLORY S SUPERMARKET\",\"city\":\"\",\"state\":\"\",\"zip\":\"\"}", "42.4487", "-83.0002", null, false ] ]
+, [ 1338777, "11D71FAC-E089-4C02-A785-31CF0647DA87", 1338777, 1475508036, "704602", 1475922768, "704602", null, "1179852", "2133925", "2632582", "1609090198.1", "14900 TIREMAN", "ASSAULT", "INTIMIDATION", "13003", "2016-09-08T00:00:00", "18", "9999", "99", null, null, "5355", "-83.1905", "42.351", [ "{\"address\":\"14900 TIREMAN\",\"city\":\"\",\"state\":\"\",\"zip\":\"\"}", "42.351", "-83.1905", null, false ] ]
+, [ 1317068, "F06DE209-6F53-4150-8619-6F948FD97DD7", 1317068, 1475508019, "704602", 1475922753, "704602", null, "1158143", "2111309", "2603151", "1607140134.1", "00 SUSSEX   TIREMAN", "ASSAULT", "INTIMIDATION", "13003", "2016-07-14T00:00:00", "9", "9999", "99", "City Council District 7", null, "5738", "-83.1934", "42.3509", [ "{\"address\":\"00 SUSSEX TIREMAN\",\"city\":\"\",\"state\":\"\",\"zip\":\"\"}", "42.3509", "-83.1934", null, false ] ]
+, [ 1333266, "5549AAAC-0A11-4030-BF6E-DBBD26160418", 1333266, 1475508031, "704602", 1475922765, "704602", null, "1174341", "2127801", "2624563", "1608250017.1", "00 FENKELL TELEGRAPH", "ASSAULT", "ASSAULT AND BATTERY/SIMPLE ASSAULT", "13001", "2016-08-25T00:00:00", "0", "9999", "99", null, null, "5545", "-83.2763", "42.4", [ "{\"address\":\"00 FENKELL TELEGRAPH\",\"city\":\"\",\"state\":\"\",\"zip\":\"\"}", "42.4", "-83.2763", null, false ] ]
+, [ 1306493, "7F251B5E-67EC-4AE6-871F-9FFDA6E45C0D", 1306493, 1475508011, "704602", 1475922745, "704602", null, "1147568", "2100726", "2589569", "1606160486.1", "00 E 8 MILE  WESTPHALIA", "ASSAULT", "ASSAULT AND BATTERY/SIMPLE ASSAULT", "13001", "2016-06-16T00:00:00", "15", "9999", "99", null, null, "2683", "-82.9929", "42.449", [ "{\"address\":\"00 E 8 MILE WESTPHALIA\",\"city\":\"\",\"state\":\"\",\"zip\":\"\"}", "42.449", "-82.9929", null, false ] ]
+, [ 1316688, "3DC43640-5854-4C7B-9633-4AC091F9FEC2", 1316688, 1475508018, "704602", 1475922753, "704602", null, "1157763", "2111039", "2602784", "1607130251.1", "09100 LONYO", "ASSAULT", "ASSAULT AND BATTERY/SIMPLE ASSAULT", "13001", "2016-07-13T00:00:00", "11", "9999", "99", "City Council District 6", null, "5736", "-83.1509", "42.3389", [ "{\"address\":\"09100 LONYO\",\"city\":\"\",\"state\":\"\",\"zip\":\"\"}", "42.3389", "-83.1509", null, false ] ]
+, [ 1301739, "C27B50EB-222A-43F6-9DA5-9BCCBD386DCB", 1301739, 1475508007, "704602", 1475922741, "704602", null, "1142814", "2096147", "2583580", "1606040218.1", "00 MACK AND I 75", "ASSAULT", "ASSAULT AND BATTERY/SIMPLE ASSAULT", "13001", "2016-06-03T00:00:00", "23", "9999", "99", "City Council District 5", "BRUSH PARK", "5175", "-83.0481", "42.3514", [ "{\"address\":\"00 MACK AND I 75\",\"city\":\"\",\"state\":\"\",\"zip\":\"\"}", "42.3514", "-83.0481", null, false ] ]
+, [ 1341787, "488945CE-6BF0-457A-8BCE-2A16FE4B2A18", 1341787, 1475508038, "704602", 1475922770, "704602", null, "1182862", "2136858", "2636391", "1609160272.1", "00000 MILE AND VANDYKE", "ASSAULT", "STALKING (MISDEMEANOR)", "13003", "2016-09-16T00:00:00", "15", "9999", "99", "City Council District 3", null, "2640", "-83.0246", "42.4479", [ "{\"address\":\"00000 MILE AND VANDYKE\",\"city\":\"\",\"state\":\"\",\"zip\":\"\"}", "42.4479", "-83.0246", null, false ] ]
+, [ 1321660, "9C6B92F9-748E-494B-8939-1D9DBEEFA171", 1321660, 1475508022, "704602", 1475922757, "704602", null, "1162735", "2115906", "2609112", "1607260005.1", "14700 TIREMAN", "ASSAULT", "ASSAULT AND BATTERY/SIMPLE ASSAULT", "13001", "2016-07-26T00:00:00", "0", "9999", "99", null, null, "5738", "-83.1884", "42.3512", [ "{\"address\":\"14700 TIREMAN\",\"city\":\"\",\"state\":\"\",\"zip\":\"\"}", "42.3512", "-83.1884", null, false ] ]
+, [ 1323955, "9A0EF791-819C-4445-BF22-C7E072555AE6", 1323955, 1475508024, "704602", 1475922758, "704602", null, "1165030", "2118258", "2612171", "1607310278.1", "00 CARPENTER AND MITCHELL", "ASSAULT", "ASSAULT AND BATTERY/SIMPLE ASSAULT", "13001", "2016-07-31T00:00:00", "18", "9999", "99", "City Council District 3", null, "5520", "-83.0633", "42.4066", [ "{\"address\":\"00 CARPENTER AND MITCHELL\",\"city\":\"\",\"state\":\"\",\"zip\":\"\"}", "42.4066", "-83.0633", null, false ] ]
+, [ 1308734, "D5BD2BCE-358D-441C-807F-24254DC59CBC", 1308734, 1475508013, "704602", 1475922747, "704602", null, "1149809", "2102984", "2592553", "1606220386.1", "00 LAUDER AND TIREMAN", "ASSAULT", "ASSAULT AND BATTERY/SIMPLE ASSAULT", "13001", "2016-06-22T00:00:00", "21", "9999", "99", null, null, "5738", "-83.1893", "42.3511", [ "{\"address\":\"00 LAUDER AND TIREMAN\",\"city\":\"\",\"state\":\"\",\"zip\":\"\"}", "42.3511", "-83.1893", null, false ] ]
+ ]
+}
