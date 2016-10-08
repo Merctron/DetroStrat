@@ -18,7 +18,7 @@ var app = {
 		var me = this;
 	},
 
-	// Bounds for North America
+	/*// Bounds for North America
   	 var strictBounds = new google.maps.LatLngBounds(
     	 new google.maps.LatLng(28.70, -127.50), 
      	new google.maps.LatLng(48.85, -55.90)
@@ -43,7 +43,7 @@ var app = {
      if (y > maxY) y = maxY;
 
      map.setCenter(new google.maps.LatLng(y, x));
-   });
+   });*/
 
 	/*
 	 * displayOptions
@@ -89,27 +89,27 @@ var app = {
 	parseCrime: function() {
 		var current_set;
 		var data = this.schema.data;
-		var zip  = "";
+		var precint  = "";
 		
 		/* For loop to create crime data points based on zip*/
 		for (var i = 0; i < data.length; i++) {
 			current_set = [];
 
-			/* Push onto the array in the following order: crime, zip, lat, long */
+			/* Push onto the array in the following order: crime, precint, lat, long */
 			current_set.push(data[i][9]);
-			current_set.push(data[i][11])
+			current_set.push(data[i][15])
 			current_set.push(data[i][18][1])
 			current_set.push(data[i][18][2]);
-			zip = current_set[1];
+			precint = current_set[1];
 
 			/* Push the current set of data into the overall_data */
-			if(this.crime_data_points[zip] == undefined){
-				this.crime_data_points[zip] = [current_set];
+			if(this.crime_data_points[precint] == undefined){
+				this.crime_data_points[precint] = [current_set];
 			} else {
-				this.crime_data_points[zip].push[current_set]
+				this.crime_data_points[precint].push[current_set]
 			}
 		}
-	}
+	},
 
 	/*
 	 * findFirstLargest
@@ -117,18 +117,18 @@ var app = {
 	 * are more than 5km apart from each other
 	 */
 	findFirstLargest: function() {
-		var zipcodes = Object.keys(this.crime_data_points);
+		var precints = Object.keys(this.crime_data_points);
 		var first_loc, second_loc; 
 		var zip 	 = "";
 		var distance = 0;
 
 		/* Nested loop that goes through each zipcode and finds the first largest set of cooridinates */
-		for (var i = 0; i < zipcodes.length; i++) {
-			zip 	   = zipcodes[i];
-			first_loc = this.crime_data_points[zip]; 
+		for (var i = 0; i < precints.length; i++) {
+			precint 	   = precints[i];
+			first_loc = this.crime_data_points[precint]; 
 
-			for (var j = 0; j < this.crime_data_points[zip].length; j++) {
-				second_loc = this.crime_data_points[zip][j];
+			for (var j = 0; j < this.crime_data_points[precint].length; j++) {
+				second_loc = this.crime_data_points[precint][j];
 				distance = calculateDistance(first_loc[0], first_loc[1], second_loc[0], second_loc[1]);
 
 				if(distance > 5){

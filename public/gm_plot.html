@@ -31,8 +31,29 @@
         height: 100vh;
       }
     </style>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script>
+      
+      var map;
+      var latLng
 
+      $(document).ready(function(){
+        $(".draggable").draggable({ revert: true });
+
+        $(".droppable").droppable({
+          drop: function( event, ui ) { 
+            placeMarker(latLng);
+          }
+        });
+      });
+
+      function placeMarker(location) {
+        var marker = new google.maps.Marker({
+          position: location, 
+          map: map
+        });
+      }
 
       var map;
       var p_sprites;
