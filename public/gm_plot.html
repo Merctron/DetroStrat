@@ -10,6 +10,7 @@
            #map {
         height: 400px;
         width: 100%;
+        z-index: 2000;
        }
 
       #mainbar {
@@ -86,7 +87,7 @@
           placeMarker(event.latLng);
         });
 
-        google.maps.event.addListener(map, 'mouseover', function(event) {
+        google.maps.event.addListener(map, 'mousemove', function(event) {
           var proj = map.getProjection();
           latLng = event.latLng;
         });
