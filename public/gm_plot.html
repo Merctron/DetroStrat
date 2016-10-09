@@ -10,11 +10,9 @@
     <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
     <link href="css/skeleton.css" rel="stylesheet">
     <link href="css/normalize.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Orbitron:400,900" rel="stylesheet">
     <style>
       * {
-        font-family: 'Orbitron', sans-serif;
-        font-size: 20px;
+        font-size: 10px;
       }
       
       body, html {
@@ -27,7 +25,7 @@
       #info {
         float:left;
         color: white;
-        width: 275px;
+        width: 200px;
         height: 100%;
         text-align: center;
         display: inline;
@@ -227,6 +225,7 @@
       var enemy = 'img/enemy.png';
       var enemy_gr = 'img/enemy_green.png';
       var enemy_rd = 'img/enemy_red.png';
+      var lib = 'img/library.png';
 
       var max_enemies = 20;
       var max_bombs = 20;
@@ -294,7 +293,7 @@
 
         if(type.localeCompare("school") == 0) loc--;
 
-        /* Loop through the libary data and get an array of longitude and latitude pairs */
+        /* Loop through the library data and get an array of longitude and latitude pairs */
         for (var i = 0; i < lib_data.length; i++) {
           var latlng = lib_data[i][loc].match(points)[0].split(" ");
           current_set_total.push([latlng[1], latlng[0]])
@@ -427,7 +426,7 @@
           score = 0;
           health = 100;
           b_thres = 100;
-          mult       = 0;
+          mult       = 1;
           level      = 0;
           init_score = 0;
           max_def    = 7;
@@ -679,7 +678,7 @@
               var marker = new google.maps.Marker({
                 position: latLng,
                 map: map,
-                icon: tower
+                icon: lib
               });
             }
         });
@@ -692,17 +691,18 @@
     <div id="info">
       
 
-      <h2 class="gtitle" style="margin-top:10px;">Detrostrat</h2>
+      <h2 class="gtitle" style="margin-top:10px; font-size: 25px">Detrostrat</h2>
 
 
-      <h2 id="score"  class="dp" style="font-size: 30px; margin-top:20px;">Score: 0</h2>
-      <h2 id="health" class="dp" style="font-size: 30px;">Health: 100</h2>
-      <h2 id="level"  class="dp" style="font-size: 30px;">Level: 1</h2>
+      <h2 id="score"  class="dp" style="font-size: 20px; margin-top:20px;">Score: 0</h2>
+      <h2 id="health" class="dp" style="font-size: 20px;">Health: 100</h2>
+      <h2 id="level"  class="dp" style="font-size: 20px;">Level: 1</h2>
 
 
       <p><button id="playbutton" href="javascript" style="margin-top:20px;">New Game</button></p>
-      <p><button id="helpbutton" href="/about.html" target="_blank">Help / About</button></p>
+      <a href="/about.html" target="_blank"><button id="helpbutton">Help / About</button></p>
       <a href="/sf_plot.html" target="_blank"><button id="mapbutton">Safety Map</button></a>
+      <br></br>
       <select id="pr_select" style="background-color:#000; margin-top:15px;">
         <option value="1">Precint 1</option>
         <option value="2">Precint 2</option>
@@ -721,7 +721,7 @@
       <br></br>
       
       <span class="titles"> Safe Tower</span>
-      <div class="card safe">
+      <div class="card safe" style="width:100px; height:100px;">
         <div class="icon_holder">
           <img src="img/tower_s.png">
         </div>

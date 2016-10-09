@@ -10,10 +10,8 @@
     <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
     <link href="css/skeleton.css" rel="stylesheet">
     <link href="css/normalize.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Orbitron:400,900" rel="stylesheet">
     <style>
       * {
-        font-family: 'Orbitron', sans-serif;
         font-size: 20px;
       }
       body, html {
@@ -25,7 +23,7 @@
       #info {
         float:left;
         color: white;
-        width: 275px;
+        width: 200px;
         height: 100%;
         text-align: center;
         display: inline;
@@ -42,7 +40,7 @@
       var map;
       var latLng
       var tower_s = 'img/tower_s.png';
-      var tower = 'img/tower.png';
+      var school = 'img/school.png';
 
       function parse_lib_school(lib_data, type) {
         var current_set_total = [];
@@ -73,7 +71,7 @@
 
       function initialize() {
         map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 12,
+          zoom: 13,
           center: new google.maps.LatLng(42.40723, -83.07037),
           mapTypeId: 'terrain'
         });
@@ -112,7 +110,7 @@
               var marker = new google.maps.Marker({
                 position: latLng,
                 map: map,
-                icon: tower
+                icon: school
               });
             }
         });
@@ -127,7 +125,9 @@
       <h2 class="gtitle" style="margin-top:10px;">Detrostrat</h2>
 
 
-      <h2 id="mapinfo" class="dp" style="font-size: 30px; margin-top:40px;">Crowd sourced map generated map with preferred safe spots selected by players across detroit.</h2>
+      <p id="mapinfo" class="dp" style="font-size: 20px; margin-top:40px;">Crowd sourced map generated map with preferred safe spots selected by players across detroit.</p>
+
+      <p id="mapinfo" class="dp" style="font-size: 20px; margin-top:40px;">The map is overlayed with schools for context about the proximity of schools to safe spots.</p>
 
 
 
