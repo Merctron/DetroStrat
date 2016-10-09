@@ -17,7 +17,7 @@ var MasterApp = function() {
     var self = this;
 
     self.setupVariables = function() {
-        self.port      = 8080;
+        self.port      = process.env.PORT || 8080;
         if (typeof self.ipaddress === "undefined") {
             self.ipaddress = "127.0.0.1";
         };
