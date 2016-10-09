@@ -1,0 +1,206 @@
+{
+  "meta" : {
+    "view" : {
+      "id" : "kvq3-ugtm",
+      "name" : "Libraries",
+      "averageRating" : 0,
+      "createdAt" : 1417011232,
+      "displayType" : "geoRows",
+      "downloadCount" : 35,
+      "indexUpdatedAt" : 1449102128,
+      "newBackend" : true,
+      "numberOfComments" : 0,
+      "oid" : 15143730,
+      "publicationAppendEnabled" : false,
+      "publicationGroup" : 5807914,
+      "publicationStage" : "published",
+      "tableId" : 5807914,
+      "totalTimesRated" : 0,
+      "viewCount" : 51,
+      "viewLastModified" : 1472417055,
+      "viewType" : "tabular",
+      "columns" : [ {
+        "id" : -1,
+        "name" : "sid",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":sid",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : { },
+        "flags" : [ "hidden" ]
+      }, {
+        "id" : -1,
+        "name" : "id",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":id",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : { },
+        "flags" : [ "hidden" ]
+      }, {
+        "id" : -1,
+        "name" : "position",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":position",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : { },
+        "flags" : [ "hidden" ]
+      }, {
+        "id" : -1,
+        "name" : "created_at",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":created_at",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : { },
+        "flags" : [ "hidden" ]
+      }, {
+        "id" : -1,
+        "name" : "created_meta",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":created_meta",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : { },
+        "flags" : [ "hidden" ]
+      }, {
+        "id" : -1,
+        "name" : "updated_at",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":updated_at",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : { },
+        "flags" : [ "hidden" ]
+      }, {
+        "id" : -1,
+        "name" : "updated_meta",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":updated_meta",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : { },
+        "flags" : [ "hidden" ]
+      }, {
+        "id" : -1,
+        "name" : "meta",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":meta",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : { },
+        "flags" : [ "hidden" ]
+      }, {
+        "id" : 231951300,
+        "name" : "OBJECTID_1",
+        "dataTypeName" : "number",
+        "fieldName" : "objectid_1",
+        "position" : 1,
+        "renderTypeName" : "number",
+        "tableColumnId" : 32970831,
+        "format" : { }
+      }, {
+        "id" : 231951297,
+        "name" : "the_geom",
+        "dataTypeName" : "point",
+        "fieldName" : "the_geom",
+        "position" : 1,
+        "renderTypeName" : "point",
+        "tableColumnId" : 32970828,
+        "format" : { }
+      }, {
+        "id" : 231951302,
+        "name" : "OBJECTID",
+        "dataTypeName" : "number",
+        "fieldName" : "objectid",
+        "position" : 2,
+        "renderTypeName" : "number",
+        "tableColumnId" : 32970833,
+        "format" : { }
+      }, {
+        "id" : 231951303,
+        "name" : "NAME",
+        "dataTypeName" : "text",
+        "fieldName" : "name",
+        "position" : 3,
+        "renderTypeName" : "text",
+        "tableColumnId" : 32970834,
+        "format" : { }
+      }, {
+        "id" : 231951305,
+        "name" : "ADDRESS",
+        "dataTypeName" : "text",
+        "fieldName" : "address",
+        "position" : 4,
+        "renderTypeName" : "text",
+        "tableColumnId" : 32970836,
+        "format" : { }
+      }, {
+        "id" : 231951307,
+        "name" : "Shape_Leng",
+        "dataTypeName" : "number",
+        "fieldName" : "shape_leng",
+        "position" : 5,
+        "renderTypeName" : "number",
+        "tableColumnId" : 32970838,
+        "format" : { }
+      } ],
+      "grants" : [ {
+        "inherited" : false,
+        "type" : "viewer",
+        "flags" : [ "public" ]
+      } ],
+      "metadata" : {
+        "geo" : {
+          "isNbe" : true,
+          "parentUid" : "exqw-7q3h"
+        }
+      },
+      "owner" : {
+        "id" : "gnpz-hmev",
+        "displayName" : "Garlin Gilchrist II",
+        "profileImageUrlLarge" : "/api/users/gnpz-hmev/profile_images/LARGE",
+        "profileImageUrlMedium" : "/api/users/gnpz-hmev/profile_images/THUMB",
+        "profileImageUrlSmall" : "/api/users/gnpz-hmev/profile_images/TINY",
+        "roleName" : "administrator",
+        "screenName" : "Garlin Gilchrist II",
+        "rights" : [ "create_datasets", "edit_others_datasets", "edit_sdp", "edit_site_theme", "moderate_comments", "manage_users", "chown_datasets", "edit_nominations", "approve_nominations", "feature_items", "federations", "manage_stories", "manage_approval", "change_configurations", "view_domain", "view_others_datasets", "edit_pages", "create_pages", "view_goals", "view_dashboards", "edit_goals", "edit_dashboards", "create_dashboards", "manage_provenance", "create_story", "edit_story_title_desc", "create_story_copy", "delete_story", "manage_story_collaborators", "manage_story_visibility", "manage_story_public_version", "edit_story", "view_unpublished_story", "view_story", "view_all_dataset_status_logs", "use_data_connectors" ]
+      },
+      "query" : { },
+      "rights" : [ "read" ],
+      "tableAuthor" : {
+        "id" : "gnpz-hmev",
+        "displayName" : "Garlin Gilchrist II",
+        "profileImageUrlLarge" : "/api/users/gnpz-hmev/profile_images/LARGE",
+        "profileImageUrlMedium" : "/api/users/gnpz-hmev/profile_images/THUMB",
+        "profileImageUrlSmall" : "/api/users/gnpz-hmev/profile_images/TINY",
+        "roleName" : "administrator",
+        "screenName" : "Garlin Gilchrist II",
+        "rights" : [ "create_datasets", "edit_others_datasets", "edit_sdp", "edit_site_theme", "moderate_comments", "manage_users", "chown_datasets", "edit_nominations", "approve_nominations", "feature_items", "federations", "manage_stories", "manage_approval", "change_configurations", "view_domain", "view_others_datasets", "edit_pages", "create_pages", "view_goals", "view_dashboards", "edit_goals", "edit_dashboards", "create_dashboards", "manage_provenance", "create_story", "edit_story_title_desc", "create_story_copy", "delete_story", "manage_story_collaborators", "manage_story_visibility", "manage_story_public_version", "edit_story", "view_unpublished_story", "view_story", "view_all_dataset_status_logs", "use_data_connectors" ]
+      },
+      "flags" : [ "default" ]
+    }
+  },
+  "data" : [ [ "row-nt4q~w2n5-6mj8", "00000000-0000-0000-CFCB-0E9BE7C8EA39", 0, 1448929980, null, 1448929980, null, "{ }", "2", "POINT (-83.10740884487858 42.30460013004569)", "2", "James Valentine Campbell", "6625 W. Fort", "460.267388776" ]
+, [ "row-t83g-eff3~8ytw", "00000000-0000-0000-AAD9-DF2748A8BF91", 0, 1448929980, null, 1448929980, null, "{ }", "1", "POINT (-83.08894041412334 42.32328040389013)", "1", "Herbert Bowen", "3648 W. Vernor", "610.575893267" ]
+, [ "row-i47d.mxvh_g7pp", "00000000-0000-0000-A3E2-E39B2593032E", 0, 1448929980, null, 1448929980, null, "{ }", "3", "POINT (-82.97437790167565 42.40156859065538)", "3", "Chandler Park", "12800 Harper", "1127.22281022" ]
+, [ "row-hph6.hck8~7nzi", "00000000-0000-0000-E694-772C386B4A79", 0, 1448929980, null, 1448929980, null, "{ }", "4", "POINT (-83.2053548225668 42.395204096585445)", "4", "Henry Chaney", "16101 Grand River", "545.314628561" ]
+, [ "row-arec_q3zv-7aky", "00000000-0000-0000-B64A-E4DF0A7AF987", 0, 1448929980, null, 1448929980, null, "{ }", "6", "POINT (-83.0468776448296 42.333963352973484)", "6", "Downtown Library", "121 Gratiot", "819.042480594" ]
+, [ "row-yjbc.zhjh.vakx", "00000000-0000-0000-519A-BC85FE54EBD7", 0, 1448929980, null, 1448929980, null, "{ }", "5", "POINT (-83.12730777767533 42.33192612572043)", "5", "Edwin F. Conely", "4600 Martin", "887.414979873" ]
+, [ "row-s4nw-3ppk_aywm", "00000000-0000-0000-A7FA-F51E445F8E93", 0, 1448929980, null, 1448929980, null, "{ }", "7", "POINT (-83.09333752963502 42.36330763713403)", "7", "Divie B. Duffield", "2507 W Grand Blvd", "684.368197211" ]
+, [ "row-ikvk~3s5h-gfmr", "00000000-0000-0000-139B-8510A114B15D", 0, 1448929980, null, 1448929980, null, "{ }", "8", "POINT (-83.22049967642508 42.358093066742526)", "8", "Thomas A. Edison", "18400 Joy Rd.", "505.978478304" ]
+, [ "row-zsmd-tcm6.m32t", "00000000-0000-0000-5AB1-B96587ABE0CD", 0, 1448929980, null, 1448929980, null, "{ }", "9", "POINT (-83.0233587699621 42.34047315204276)", "9", "Elmwood Park", "550 Chene", "2273.43493156" ]
+, [ "row-xuhv_d4i2-wtjx", "00000000-0000-0000-F501-992430D22F85", 0, 1448929980, null, 1448929980, null, "{ }", "10", "POINT (-82.98403802598973 42.427134761166954)", "10", "Benjamin Franklin", "13651 E. McNichols", "496.852463077" ]
+, [ "row-urhd_pud4.946a", "00000000-0000-0000-F662-C249AD9D750D", 0, 1448929980, null, 1448929980, null, "{ }", "11", "POINT (-83.17283309238202 42.41638394131857)", "11", "Bela Hubbard", "12929 W. McNichols", "495.190086714" ]
+, [ "row-7pgx_bu3r-myp7", "00000000-0000-0000-9E77-BBCCDFB1CD4A", 0, 1448929980, null, 1448929980, null, "{ }", "12", "POINT (-83.06012200348957 42.41480617191481)", "12", "Elisabeth Knapp", "13330 Conant", "1085.20397201" ]
+, [ "row-fidt.rvk5~mtga", "00000000-0000-0000-F129-F6988055F545", 0, 1448929980, null, 1448929980, null, "{ }", "13", "POINT (-83.06671060849577 42.358401536711455)", "13", "Main Library", "5201 Woodward", "2552.12920568" ]
+, [ "row-cgv5_qedc~ziia", "00000000-0000-0000-3FFF-ADAE0FAFCD6B", 0, 1448929980, null, 1448929980, null, "{ }", "14", "POINT (-83.12740128194397 42.396761284287265)", "14", "Francis Parkman", "1766 Oakman Blvd", "833.927671916" ]
+, [ "row-myx8_gqc3.xtek", "00000000-0000-0000-BF5D-1B0642F103F0", 0, 1448929980, null, 1448929980, null, "{ }", "15", "POINT (-83.2492511870453 42.413580149115866)", "15", "Redford", "21200 Grand River", "733.119241647" ]
+, [ "row-s8wy~px3n.k93t", "00000000-0000-0000-404B-406A83C70330", 0, 1448929980, null, 1448929980, null, "{ }", "17", "POINT (-83.02977435555528 42.43363660504726)", "17", "Laura Ingalls Wilder", "7140 E. 7 Mile", "645.507524709" ]
+, [ "row-vwaj-njh6~xzq2", "00000000-0000-0000-613A-30C6786837B4", 0, 1448929980, null, 1448929980, null, "{ }", "16", "POINT (-83.14417393035808 42.43127289218781)", "16", "Sherwood Forest", "7117 W. 7 Mile", "621.908667846" ]
+, [ "row-56au~udj7~6shb", "00000000-0000-0000-AEAC-D05C1763EFBE", 0, 1448929980, null, 1448929980, null, "{ }", "18", "POINT (-82.93737499175475 42.404016215551074)", "18", "Jefferson", "12350 E. Outer Drive", "531.779128266" ]
+, [ "row-8yv4~qy7h~ivnv", "00000000-0000-0000-8363-5CBCF6E28A60", 0, 1448929980, null, 1448929980, null, "{ }", "19", "POINT (-83.07422447595924 42.34310550011011)", "19", "Douglass", "3666 Grand River", "1383.41012103" ]
+, [ "row-y7gp_7b4a.y2mn", "00000000-0000-0000-E946-ABA9CACFB12E", 0, 1448929980, null, 1448929980, null, "{ }", "20", "POINT (-83.21764330161865 42.4297826119116)", "20", "Jessie C. Chase", "17731 W 7 Mile", "625.883527428" ]
+ ]
+}

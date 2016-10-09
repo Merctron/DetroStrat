@@ -27,6 +27,20 @@ exports.getCrData = function(req, res) {
   });
 }
 
+exports.getLibData = function(req, res) {
+    var file = 'public/det_open_data/public_libraries.json';
+    console.log('path: ' + file);
+
+    jsonfile.readFile(file, function(err, obj) {
+    if (err) {
+      res.json({status: 'error', reason: err.toString()});
+      return;
+    }
+
+    res.json(obj.data);
+  });
+}
+
 exports.insertSafeData = function(req, res) {
   MongoClient.connect(url, function(err, db) {
     if (err) {
