@@ -62,6 +62,7 @@ var MasterApp = function() {
         mainRouter.get('/', mainController.getLandingPage);
         mainRouter.get('/cr_data', mainController.getCrData);
         mainRouter.get('/lib_data', mainController.getLibData);
+        mainRouter.get('/school_data', mainController.getSchoolData);
         mainRouter.post('/sfsubmit', mainController.insertSafeData);
         mainRouter.get('/sf_data', mainController.getSafeData);
         self.app.use('/', mainRouter);
