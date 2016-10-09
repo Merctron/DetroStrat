@@ -32,7 +32,6 @@
         overflow-y: scroll;
         z-index: 0;
         max-width: 100%;
-        overflow-x: hidden;
       }
 
       #map {
@@ -315,6 +314,7 @@
               s_lng: lng
           });
           cur_def++;
+          $("#towersleft").text("Towers: " + (max_def - cur_def));
         }
       }
 
@@ -332,6 +332,7 @@
           });
           cur_def++;
           b_thres += 10;
+          $("#towersleft").text("Towers: " + (max_def - cur_def));
         }
       }
 
@@ -350,6 +351,7 @@
           p3_sprites.push(nw_tw_3);
           cur_def++;
           detectProx(nw_tw_3);
+          $("#towersleft").text("Towers: " + (max_def - cur_def));
         }
       }
 
@@ -435,6 +437,7 @@
           $("#health").text("Health: " + health);
           $("#score").text("Score: " + score);
           $("#level").text("Level: " + level);
+          $("#towersleft").text("Towers: " + (max_def - cur_def));
 
           for (var i = 0; i < p_sprites.length; i++) {
             p_sprites[i].s_marker.setMap(null);
@@ -520,6 +523,7 @@
               /* Increase defense every  levels and increase the speed */
               if((max_def < 15) && (level % 2) == 0) {
                 max_def++;
+                $("#towersleft").text("Towers: " + (max_def - cur_def));
                 mult = mult * 1.25;
               }
 
@@ -697,6 +701,7 @@
       <h2 id="score"  class="dp" style="font-size: 20px; margin-top:20px;">Score: 0</h2>
       <h2 id="health" class="dp" style="font-size: 20px;">Health: 100</h2>
       <h2 id="level"  class="dp" style="font-size: 20px;">Level: 1</h2>
+      <h2 id="towersleft"  class="dp" style="font-size: 20px;">Towers: 7</h2>
 
 
       <p><button id="playbutton" href="javascript" style="margin-top:20px;">New Game</button></p>
