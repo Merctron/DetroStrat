@@ -242,6 +242,8 @@
       var cur_def = 0;
       var gmId = 0;
       var b_thres = 100;
+      var mult    = 1;
+
 
 
       function httpGetAsync(theUrl, callback)
@@ -263,7 +265,7 @@
 
       function getRandomSpd() {
         var rand_ind = getRandomNumber(0, 7);
-        return speeds[rand_ind];
+        return (mult * speeds[rand_ind]);
       }
 
       function parse_cr(cr_data, prc) {
@@ -470,14 +472,35 @@
 
           });
 
-          var spd = 0.005;
-          var iter = 0;
-          iter2 = 100;
-          var spawn = true;
+          var iter       = 0;
+          iter2          = 100;
+          var spawn      = true;
+          var check      = 0;
+          var init_score = 0;
+          var level      = 0;
 
           gmId = setInterval(function() {
             if (health <= 0) {
               clearInterval(intId);
+            }
+
+            /* Calculate the threshold for new level based on last score recorded and
+               on the linear algorithm with it */
+            check = init_score + (level * 10);
+            
+            /* If the current score is larger than the threshold then level up and
+               record new score */
+            if(score > check) {
+              level++;
+              init_score = score;
+              $("#level").text("Level: " + level);
+
+              /* Increase defense every  levels and increase the speed */
+              if((max_def < 15) && (level % 2) == 0) {
+                max_def++;
+                mult = mult * 1.25;
+              }
+
             }
 
             for (var i = 0; i < e_sprites.length; i++) {
@@ -636,8 +659,9 @@
       <h2 class="gtitle" style="margin-top:10px;">Detrostrat</h2>
 
 
-      <h2 id="score" class="dp" style="font-size: 30px; margin-top:20px;">Score: 0</h2>
+      <h2 id="score"  class="dp" style="font-size: 30px; margin-top:20px;">Score: 0</h2>
       <h2 id="health" class="dp" style="font-size: 30px;">Health: 100</h2>
+      <h2 id="level"  class="dp" style="font-size: 30px;">Level: 1</h2>
 
 
       <p><button id="playbutton" href="javascript" style="margin-top:20px;">New Game</button></p>
